@@ -10,7 +10,7 @@ const StyledNavbar = styled.nav`
   display: flex;
   flex-direction: column;
   width: 56px;
-  height: 100%;
+  height: 50%;
   background-color: rgba(0, 0, 0, 0.85);
 `;
 
