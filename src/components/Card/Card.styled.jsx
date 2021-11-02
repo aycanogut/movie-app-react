@@ -13,7 +13,7 @@ const StyledImg = styled.img`
 const StyledBadge = styled.span`
   position: absolute;
   left: 24px;
-  bottom: 104px;
+  bottom: 64px;
   padding: 10px;
   border-radius: 12px;
   background-color: rgba(29, 29, 29, 0.5);
@@ -26,7 +26,7 @@ const StyledTitle = styled.header`
   left: 24px;
   bottom: 24px;
   color: #fff;
-  font-size: 28px;
+  font-size: 24px;
 `;
 
 const Card = () => {
@@ -34,7 +34,7 @@ const Card = () => {
     <StyledCard>
       <StyledImg src={CardImage} />
       <StyledBadge>Fantasy</StyledBadge>
-      <StyledTitle>Wonder Woman</StyledTitle>
+      <StyledTitle>Wonder Woman 1984</StyledTitle>
     </StyledCard>
   );
 };
