@@ -1,14 +1,13 @@
 import React from "react";
-import Navbar from "../Navbar/Navbar.styled";
-import Card from "../Card/Card.styled";
-import Search from "../Search/Search.styled";
+import Header from "../Header/Header.styled";
+import CardContainer from "../CardContainer/CardContainer.styled";
 
 function Page() {
   return (
     <>
-      <Navbar />
-      <Search />
-      <Card />
+      <Header />
+      <CardContainer />
+      <CardContainer />
     </>
   );
 }
