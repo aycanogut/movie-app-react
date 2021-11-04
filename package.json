@@ -7,16 +7,23 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "axios": "^0.24.0",
     "bootstrap": "^5.1.1",
     "react": "^17.0.0",
     "react-bootstrap": "^2.0.0-rc.1",
     "react-bootstrap-icons": "^1.6.1",
     "react-dom": "^17.0.0",
     "react-normalize": "^0.4.4",
-    "styled-components": "^5.3.3"
+    "styled-components": "^5.3.3",
+    "swiper": "^6.8.4"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^1.0.0",
+    "eslint": "^8.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.26.1",
+    "prettier": "^2.4.1",
     "vite": "^2.6.4"
   }
 }
