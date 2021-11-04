@@ -1,14 +1,14 @@
-import React from 'react';
-import { useState } from 'react';
+import React from "react";
+import { useState } from "react";
 import styled from "styled-components";
+import { Search } from "react-bootstrap-icons";
 
-const StyledInput=styled.input`
-    background-color:#313131;
-    width: 100%;
-    border-style: none;
-    padding-left: 10px;
+const StyledInput = styled.input`
+  background-color: #313131;
+  width: 100%;
+  border-style: none;
+  padding-left: 10px;
 `;
-
 
 const SearchBox = styled.div`
   display: flex;
@@ -20,37 +20,28 @@ const SearchBox = styled.div`
   position: fixed;
   right: 300px;
   top: 20px;
-  background-color:#313131;
-`;
-const SearchIcon = styled.img`
-  width: 32px;
-  height: 32px;
+  background-color: #313131;
 `;
 
+const SearchInput = ({ search }) => {
+  const [searchValue, setSearchValue] = useState("");
 
-const Search = ({search})=>{
+  const handleSearchInputChanges = (e) => {
+    setSearchValue(e.target.value);
+  };
 
-        const [searchValue, setSearchValue] = useState("");
-      
-        const handleSearchInputChanges = e => {
-          setSearchValue(e.target.value);
-        };
-      
-       
-    return (
-        <div>
-           
-        
-        <SearchBox>
-           <SearchIcon src="src/assets/icons/search-icon.svg" />  
-           <StyledInput
-            placeholder="Search Movie"
-            value={searchValue}
-            onChange={handleSearchInputChanges}
-          />
-        </SearchBox>
-        </div>
-    );
+  return (
+    <div>
+      <SearchBox>
+        <Search size={24} color="gray" />
+        <StyledInput
+          placeholder="Search Movie"
+          value={searchValue}
+          onChange={handleSearchInputChanges}
+        />
+      </SearchBox>
+    </div>
+  );
 };
 
-export default Search;
+export default SearchInput;
