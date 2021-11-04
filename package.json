@@ -14,7 +14,8 @@
     "react-bootstrap-icons": "^1.6.1",
     "react-dom": "^17.0.0",
     "react-normalize": "^0.4.4",
-    "styled-components": "^5.3.3"
+    "styled-components": "^5.3.3",
+    "swiper": "^6.8.4"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^1.0.0",
