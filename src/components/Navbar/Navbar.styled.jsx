@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import helpers from "../helpers";
 import NavLogo from "../../assets/images/nav-brand.png";
 import { House } from "react-bootstrap-icons";
 import { Film } from "react-bootstrap-icons";
@@ -7,26 +8,73 @@ import { Tv } from "react-bootstrap-icons";
 import { Star } from "react-bootstrap-icons";
 
 const StyledNavbar = styled.nav`
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
   display: flex;
-  flex-direction: column;
-  width: 56px;
-  height: 50%;
-  background-color: rgba(0, 0, 0, 0.85);
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  @media only screen and ${helpers.device.sm} {
+    padding: 0.6rem 0;
+  }
+
+  @media only screen and ${helpers.device.md} {
+    padding: 0.8rem 0;
+  }
+
+  @media only screen and ${helpers.device.lg} {
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 6rem;
+    height: 70%;
+    padding: 4rem 0;
+  }
 `;
 
 const StyledImg = styled.img`
-  width: 50px;
-  height: auto;
-  margin: 40px 0 64px 0;
+  width: 38px;
+  height: 38px;
+
+  @media only screen and ${helpers.device.sm} {
+    width: 42px;
+    height: 42px;
+  }
+
+  @media only screen and ${helpers.device.md} {
+    width: 48px;
+    height: 48px;
+  }
+
+  @media only screen and ${helpers.device.lg} {
+    width: 50px;
+    height: 50px;
+  }
 `;
 
 const StlyedUl = styled.ul`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 90px;
+  flex-direction: row;
+  gap: 3rem;
   list-style: none;
   padding: 0;
+
+  @media only screen and ${helpers.device.sm} {
+    gap: 5rem;
+  }
+
+  @media only screen and ${helpers.device.md} {
+    gap: 12rem;
+  }
+
+  @media only screen and ${helpers.device.lg} {
+    flex-direction: column;
+    gap: 9rem;
+    padding: 8rem 0;
+  }
 `;
 
 const StyledList = styled.li``;
@@ -38,22 +86,22 @@ const Navbar = () => {
       <StlyedUl>
         <StyledList>
           <a href="#">
-            <House color="white" size={32} />
+            <House color="white" size={26} />
           </a>
         </StyledList>
         <StyledList>
           <a href="#">
-            <Film color="white" size={32} />
+            <Film color="white" size={26} />
           </a>
         </StyledList>
         <StyledList>
           <a href="#">
-            <Tv color="white" size={32} />
+            <Tv color="white" size={26} />
           </a>
         </StyledList>
         <StyledList>
           <a href="#">
-            <Star color="white" size={32} />
+            <Star color="white" size={26} />
           </a>
         </StyledList>
       </StlyedUl>
