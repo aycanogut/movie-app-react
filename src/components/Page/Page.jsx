@@ -1,13 +1,12 @@
 import React from "react";
 import Header from "../Header/Header.styled";
-import CardContainer from "../CardContainer/CardContainer.styled";
+import Wrapper from "../Wrapper/Wrapper.styled";
 
 function Page() {
   return (
     <>
       <Header />
-      <CardContainer />
-      <CardContainer />
+      <Wrapper />
     </>
   );
 }
