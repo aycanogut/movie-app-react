@@ -5,7 +5,7 @@ import SearchInput from "../Search/Search.styled";
 import Carousel from "../Carousel/Carousel";
 
 const StyledHeader = styled.header`
-  // css
+  position: relative;
 `;
 
 function Header() {
