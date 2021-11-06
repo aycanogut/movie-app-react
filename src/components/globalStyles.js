@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import helpers from "./helpers";
 
 export const GlobalStyles = createGlobalStyle`
 
@@ -10,6 +11,8 @@ html {
 body {
 height: 100vh;
 font-family: 'Roboto', sans-serif;
+background-color: ${helpers.colors.body};
+
 }
 
 img {
