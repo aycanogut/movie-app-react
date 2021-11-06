@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import { CaretRight } from "react-bootstrap-icons";
 import helpers from "../helpers";
 import Title from "../Title/Title.styled";
 import Card from "../Card/Card.styled";
-import { CaretRight } from "react-bootstrap-icons";
 
 const StyledCardContainer = styled.section`
   display: grid;
@@ -26,14 +26,16 @@ const StyledCardContainer = styled.section`
 const StyledHeader = styled.header`
   display: flex;
   align-content: center;
+  margin-block: 4rem;
+  color: ${helpers.colors.text};
 `;
 
 const CardContainer = () => {
   return (
     <>
       <StyledHeader>
-        <Title>New Releases</Title>
-        <CaretRight color="black" size={24} />
+        <Title>Movies</Title>
+        <CaretRight color="white" size={24} />
       </StyledHeader>
       <StyledCardContainer>
         <Card />

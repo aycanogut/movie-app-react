@@ -20,4 +20,10 @@ const fontWeight = {
   extraBold: "800",
 };
 
-export default { size, device, fontWeight };
+const colors = {
+  body: "#1d1d1d",
+  text: "#fff",
+  textBadge: "#0FEFFD",
+};
+
+export default { size, device, fontWeight, colors };
