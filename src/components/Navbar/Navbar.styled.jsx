@@ -86,22 +86,22 @@ const Navbar = () => {
       <StlyedUl>
         <StyledList>
           <a href="#">
-            <House color="white" size={26} />
+            <House color="white" size={24} />
           </a>
         </StyledList>
         <StyledList>
           <a href="#">
-            <Film color="white" size={26} />
+            <Film color="white" size={24} />
           </a>
         </StyledList>
         <StyledList>
           <a href="#">
-            <Tv color="white" size={26} />
+            <Tv color="white" size={24} />
           </a>
         </StyledList>
         <StyledList>
           <a href="#">
-            <Star color="white" size={26} />
+            <Star color="white" size={24} />
           </a>
         </StyledList>
       </StlyedUl>
