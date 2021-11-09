@@ -33,8 +33,20 @@ const Homepage = () => {
         }}
         speed={600}
         parallax={true}
-        slidesPerView={6}
-        centeredSlides={true}
+        slidesPerView={2}
+        centeredSlides={false}
+        breakpoints={{
+          // when window width is >= 640px
+          640: {
+            width: 640,
+            slidesPerView: 3,
+          },
+          // when window width is >= 768px
+          768: {
+            width: 768,
+            slidesPerView: 4,
+          },
+        }}
         className="mySwiper"
       >
         <SwiperSlide>
@@ -57,7 +69,49 @@ const Homepage = () => {
         </SwiperSlide>
         <SwiperSlide>
           <img src="https://dummyimage.com/292x440.png" alt="" />
-        </SwiperSlide>
+        </SwiperSlide>{" "}
+        <SwiperSlide>
+          <img src="https://dummyimage.com/292x440.png" alt="" />
+        </SwiperSlide>{" "}
+        <SwiperSlide>
+          <img src="https://dummyimage.com/292x440.png" alt="" />
+        </SwiperSlide>{" "}
+        <SwiperSlide>
+          <img src="https://dummyimage.com/292x440.png" alt="" />
+        </SwiperSlide>{" "}
+        <SwiperSlide>
+          <img src="https://dummyimage.com/292x440.png" alt="" />
+        </SwiperSlide>{" "}
+        <SwiperSlide>
+          <img src="https://dummyimage.com/292x440.png" alt="" />
+        </SwiperSlide>{" "}
+        <SwiperSlide>
+          <img src="https://dummyimage.com/292x440.png" alt="" />
+        </SwiperSlide>{" "}
+        <SwiperSlide>
+          <img src="https://dummyimage.com/292x440.png" alt="" />
+        </SwiperSlide>{" "}
+        <SwiperSlide>
+          <img src="https://dummyimage.com/292x440.png" alt="" />
+        </SwiperSlide>{" "}
+        <SwiperSlide>
+          <img src="https://dummyimage.com/292x440.png" alt="" />
+        </SwiperSlide>{" "}
+        <SwiperSlide>
+          <img src="https://dummyimage.com/292x440.png" alt="" />
+        </SwiperSlide>{" "}
+        <SwiperSlide>
+          <img src="https://dummyimage.com/292x440.png" alt="" />
+        </SwiperSlide>{" "}
+        <SwiperSlide>
+          <img src="https://dummyimage.com/292x440.png" alt="" />
+        </SwiperSlide>{" "}
+        <SwiperSlide>
+          <img src="https://dummyimage.com/292x440.png" alt="" />
+        </SwiperSlide>{" "}
+        <SwiperSlide>
+          <img src="https://dummyimage.com/292x440.png" alt="" />
+        </SwiperSlide>{" "}
         <SwiperSlide>
           <img src="https://dummyimage.com/292x440.png" alt="" />
         </SwiperSlide>
