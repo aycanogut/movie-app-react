@@ -1,4 +1,4 @@
-import Page from "./components/Page/Page";
+import Routing from "./components/Routing/Routing";
 import Normalize from "react-normalize";
 import { GlobalStyles } from "./components/globalStyles";
 
@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <Normalize />
       <GlobalStyles />
-      <Page />
+      <Routing />
     </div>
   );
 }
