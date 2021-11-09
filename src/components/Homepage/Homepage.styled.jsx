@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import helpers from "../helpers";
+import Header from "../Header/Header.styled";
 
 // Import Swiper styles
 import "swiper/css";
@@ -23,9 +24,10 @@ const StyledHeader = styled.header`
 const Homepage = () => {
   return (
     <>
+      <Header />
       <StyledHeader>
         <Title>New Releases</Title>
-      </StyledHeader>{" "}
+      </StyledHeader>
       <Swiper
         autoplay={{
           delay: 2500,
@@ -48,74 +50,7 @@ const Homepage = () => {
           },
         }}
         className="mySwiper"
-      >
-        <SwiperSlide>
-          <img src="https://dummyimage.com/292x440.png" alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://dummyimage.com/292x440.png" alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://dummyimage.com/292x440.png" alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://dummyimage.com/292x440.png" alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://dummyimage.com/292x440.png" alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://dummyimage.com/292x440.png" alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://dummyimage.com/292x440.png" alt="" />
-        </SwiperSlide>{" "}
-        <SwiperSlide>
-          <img src="https://dummyimage.com/292x440.png" alt="" />
-        </SwiperSlide>{" "}
-        <SwiperSlide>
-          <img src="https://dummyimage.com/292x440.png" alt="" />
-        </SwiperSlide>{" "}
-        <SwiperSlide>
-          <img src="https://dummyimage.com/292x440.png" alt="" />
-        </SwiperSlide>{" "}
-        <SwiperSlide>
-          <img src="https://dummyimage.com/292x440.png" alt="" />
-        </SwiperSlide>{" "}
-        <SwiperSlide>
-          <img src="https://dummyimage.com/292x440.png" alt="" />
-        </SwiperSlide>{" "}
-        <SwiperSlide>
-          <img src="https://dummyimage.com/292x440.png" alt="" />
-        </SwiperSlide>{" "}
-        <SwiperSlide>
-          <img src="https://dummyimage.com/292x440.png" alt="" />
-        </SwiperSlide>{" "}
-        <SwiperSlide>
-          <img src="https://dummyimage.com/292x440.png" alt="" />
-        </SwiperSlide>{" "}
-        <SwiperSlide>
-          <img src="https://dummyimage.com/292x440.png" alt="" />
-        </SwiperSlide>{" "}
-        <SwiperSlide>
-          <img src="https://dummyimage.com/292x440.png" alt="" />
-        </SwiperSlide>{" "}
-        <SwiperSlide>
-          <img src="https://dummyimage.com/292x440.png" alt="" />
-        </SwiperSlide>{" "}
-        <SwiperSlide>
-          <img src="https://dummyimage.com/292x440.png" alt="" />
-        </SwiperSlide>{" "}
-        <SwiperSlide>
-          <img src="https://dummyimage.com/292x440.png" alt="" />
-        </SwiperSlide>{" "}
-        <SwiperSlide>
-          <img src="https://dummyimage.com/292x440.png" alt="" />
-        </SwiperSlide>{" "}
-        <SwiperSlide>
-          <img src="https://dummyimage.com/292x440.png" alt="" />
-        </SwiperSlide>
-      </Swiper>
+      ></Swiper>
     </>
   );
 };
