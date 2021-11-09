@@ -6,20 +6,30 @@ import helpers from "../helpers";
 import Search from "../Search/Search.styled";
 
 const StyledWrapper = styled.section`
-  /* margin-top: 200px;
-  padding-left: 60px;
-  width: 700px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  color: white;
-  font-size: 24px; */
   position: absolute;
   top: 0;
   left: 0;
   z-index: 1;
-  padding: 8rem 4rem;
+  display: grid;
+  place-items: start;
+  height: 20%;
+  padding: 22% 4rem;
   color: ${helpers.colors.text};
+
+  @media only screen and ${helpers.device.sm} {
+    padding: 25% 8rem;
+  }
+
+  @media only screen and ${helpers.device.md} {
+    max-width: 500px;
+    padding: 20% 12rem;
+  }
+
+  @media only screen and ${helpers.device.lg} {
+    max-width: 600px;
+    padding: 12rem;
+    margin: 10rem;
+  }
 `;
 
 const StyledBadge = styled.span`
@@ -28,14 +38,45 @@ const StyledBadge = styled.span`
   background-color: rgba(29, 29, 29, 0.5);
   color: ${helpers.colors.textBadge};
   font-size: 10px;
+
+  @media only screen and ${helpers.device.sm} {
+    font-size: 12px;
+  }
+
+  @media only screen and ${helpers.device.md} {
+    font-size: 14px;
+  } ;
 `;
 
 const Styledh1 = styled.h1`
   font-size: 22px;
+  margin: 1rem 0 0 0;
+
+  @media only screen and ${helpers.device.sm} {
+    font-size: 24px;
+  }
+
+  @media only screen and ${helpers.device.md} {
+    font-size: 32px;
+    margin: 2rem 0 2rem 0;
+  }
+
+  @media only screen and ${helpers.device.lg} {
+    font-size: 64px;
+  } ;
 `;
 
 const StyledP = styled.p`
   font-size: 12px;
+
+  @media only screen and ${helpers.device.sm} {
+    font-size: 14px;
+  }
+
+  @media only screen and ${helpers.device.md} {
+    font-size: 18px;
+    line-height: 1.5;
+  }
 `;
 
 const StyledNav = styled.nav`
@@ -75,8 +116,10 @@ const Hero = () => {
         <StyledBadge>Science Finction</StyledBadge>
         <Styledh1>Godzilla vs. Kong</Styledh1>
         <StyledP>
-          The world is beset by the appearance of monstrous creatures, but one
-          of them may be the only one who can save humanity.
+          In a time when monsters walk the Earth, humanity’s fight for its
+          future sets Godzilla and Kong on a collision course that will see the
+          two most powerful forces of nature on the planet collide in a
+          spectacular battle for the ages.
         </StyledP>
       </StyledWrapper>
     </>
