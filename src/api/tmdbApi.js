@@ -21,7 +21,7 @@ const tmdApi = {
     const url = `movie/${movieType[type]}`;
     return apiCall.get(url, params);
   },
-  getTvlist: (type, params) => {
+  getTvList: (type, params) => {
     const url = `tv/${movieType[type]}`;
     return apiCall.get(url, params);
   },
