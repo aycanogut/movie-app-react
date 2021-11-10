@@ -48,9 +48,11 @@ const Carousel = () => {
     >
       {movies.map((movie, index) => (
         <SwiperSlide key={index}>
-          <img src={config.images(movie.backdrop_path)} alt="" />
+          <img
+            src={config.images(movie.backdrop_path)}
+            alt={`poster of ${movie.original_title} movie`}
+          />
           <Hero
-            badge={`Score: ${movie.vote_average}`}
             title={movie.original_title}
             text={movie.overview.substring(0, 220)}
           />
