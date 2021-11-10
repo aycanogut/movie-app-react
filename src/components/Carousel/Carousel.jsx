@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import Hero from "../Hero/Hero.styled";
 
 // Import Swiper styles
 import "swiper/css";
@@ -13,7 +14,6 @@ SwiperCore.use([Autoplay, Parallax]);
 // api config
 import tmdbApi, { category, movieType } from "../../api/tmdbApi.js";
 import config from "../../api/config.js";
-import Hero from "../Hero/Hero.styled";
 
 const Carousel = () => {
   const [movies, setMovies] = useState([]);
@@ -26,7 +26,6 @@ const Carousel = () => {
           params,
         });
         setMovies(response.results.slice(0, 5));
-        console.log(movies);
       } catch {
         console.log("error");
       }
@@ -37,7 +36,7 @@ const Carousel = () => {
   return (
     <Swiper
       autoplay={{
-        delay: 2500,
+        delay: 5500,
         disableOnInteraction: false,
       }}
       speed={600}
@@ -51,7 +50,7 @@ const Carousel = () => {
         <SwiperSlide key={index}>
           <img src={config.images(movie.backdrop_path)} alt="" />
           <Hero
-            badge={movie.original_title}
+            badge={`Score: ${movie.vote_average}`}
             title={movie.original_title}
             text={movie.overview.substring(0, 220)}
           />
