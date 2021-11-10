@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Header from "../Header/Header.styled";
 import Title from "../Title/Title.styled";
@@ -10,6 +11,11 @@ import "swiper/css";
 // api config
 import tmdbApi, { movieType, tvType } from "../../api/tmdbApi.js";
 import config from "../../api/config.js";
+
+const StyledWrapper = styled.div`
+  max-width: 1920px;
+  margin: 0 auto;
+`;
 
 const Homepage = () => {
   const [movies, setMovies] = useState([]);
@@ -38,92 +44,94 @@ const Homepage = () => {
   return (
     <>
       <Header />
-      <Title title={"New Releases"} />
-      <Swiper
-        grabCursor={true}
-        autoplay={{
-          delay: 9999999999999,
-          disableOnInteraction: false,
-        }}
-        className="mySwiper"
-        breakpoints={{
-          320: {
-            width: 160,
-            slidesPerView: 1,
-          },
-          465: {
-            width: 320,
-            slidesPerView: 2,
-          },
-          640: {
-            width: 500,
-            slidesPerView: 2,
-          },
+      <StyledWrapper>
+        <Title title={"New Releases"} />
+        <Swiper
+          grabCursor={true}
+          autoplay={{
+            delay: 9999999999999,
+            disableOnInteraction: false,
+          }}
+          className="mySwiper"
+          breakpoints={{
+            320: {
+              width: 160,
+              slidesPerView: 1,
+            },
+            465: {
+              width: 320,
+              slidesPerView: 2,
+            },
+            640: {
+              width: 500,
+              slidesPerView: 2,
+            },
 
-          768: {
-            width: 700,
-            slidesPerView: 3,
-          },
-          992: {
-            width: 992,
-            slidesPerView: 3,
-          },
-        }}
-        style={{ marginBlock: "5rem" }}
-      >
-        {movies.map((movie, index) => (
-          <SwiperSlide key={index}>
-            <Card
-              image={config.w500images(movie.poster_path)}
-              title={movie.original_title}
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+            768: {
+              width: 700,
+              slidesPerView: 3,
+            },
+            992: {
+              width: 992,
+              slidesPerView: 3,
+            },
+          }}
+          style={{ marginBlock: "5rem" }}
+        >
+          {movies.map((movie, index) => (
+            <SwiperSlide key={index}>
+              <Card
+                image={config.w500images(movie.poster_path)}
+                title={movie.original_title}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
-      <Title title={"Featured TV Shows"} />
+        <Title title={"Featured TV Shows"} />
 
-      <Swiper
-        grabCursor={true}
-        autoplay={{
-          delay: 9999999999999,
-          disableOnInteraction: false,
-        }}
-        className="mySwiper"
-        breakpoints={{
-          320: {
-            width: 160,
-            slidesPerView: 1,
-          },
-          465: {
-            width: 320,
-            slidesPerView: 2,
-          },
-          640: {
-            width: 500,
-            slidesPerView: 2,
-          },
+        <Swiper
+          grabCursor={true}
+          autoplay={{
+            delay: 9999999999999,
+            disableOnInteraction: false,
+          }}
+          className="mySwiper"
+          breakpoints={{
+            320: {
+              width: 160,
+              slidesPerView: 1,
+            },
+            465: {
+              width: 320,
+              slidesPerView: 2,
+            },
+            640: {
+              width: 500,
+              slidesPerView: 2,
+            },
 
-          768: {
-            width: 700,
-            slidesPerView: 3,
-          },
-          992: {
-            width: 992,
-            slidesPerView: 3,
-          },
-        }}
-        style={{ marginBlock: "5rem" }}
-      >
-        {tvShows.map((tv, index) => (
-          <SwiperSlide key={index}>
-            <Card
-              image={config.w500images(tv.poster_path)}
-              title={tv.original_title}
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+            768: {
+              width: 700,
+              slidesPerView: 3,
+            },
+            992: {
+              width: 992,
+              slidesPerView: 3,
+            },
+          }}
+          style={{ marginBlock: "5rem" }}
+        >
+          {tvShows.map((tv, index) => (
+            <SwiperSlide key={index}>
+              <Card
+                image={config.w500images(tv.poster_path)}
+                title={tv.original_title}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </StyledWrapper>
     </>
   );
 };
