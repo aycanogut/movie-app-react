@@ -1,15 +1,18 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Catalog from "../Catalog/Catalog";
-import Homepage from "../Homepage/Homepage.styled";
+import Loader from "../Loader/Loader";
+const Homepage = lazy(() => import("../Homepage/Homepage.styled"));
+const Catalog = lazy(() => import("../Catalog/Catalog"));
 
 function Routing() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/search" element={<Catalog />} />
-      </Routes>
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/search" element={<Catalog />} />
+        </Routes>
+      </Suspense>
     </Router>
   );
 }
