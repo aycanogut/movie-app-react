@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import helpers from "../helpers";
 import NavLogo from "../../assets/images/nav-brand.png";
 import { House } from "react-bootstrap-icons";
-import { Film } from "react-bootstrap-icons";
-import { Tv } from "react-bootstrap-icons";
+import { Search } from "react-bootstrap-icons";
+
 import { Star } from "react-bootstrap-icons";
 
 const StyledNavbar = styled.nav`
@@ -16,10 +17,9 @@ const StyledNavbar = styled.nav`
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0.6rem 0;
 
   @media only screen and ${helpers.device.sm} {
-    padding: 0.6rem 0;
   }
 
   @media only screen and ${helpers.device.md} {
@@ -35,7 +35,7 @@ const StyledNavbar = styled.nav`
   }
 `;
 
-const StyledImg = styled.img`
+const StyledBadge = styled.img`
   width: 38px;
   height: 38px;
 
@@ -82,24 +82,25 @@ const StyledList = styled.li``;
 const Navbar = () => {
   return (
     <StyledNavbar>
-      <StyledImg src={NavLogo} alt="" />
+      <Link to="/">
+        <StyledBadge src={NavLogo} alt="" />
+      </Link>
       <StlyedUl>
         <StyledList>
-          <a href="#">
+          <Link to="/">
             <House color="white" size={24} />
-          </a>
+          </Link>
         </StyledList>
         <StyledList>
-          <a href="#">
-            <Film color="white" size={24} />
-          </a>
+          <Link to="/search">
+            <Search color="white" size={24} />
+          </Link>
         </StyledList>
         <StyledList>
-          <a href="#">
-            <Tv color="white" size={24} />
-          </a>
-        </StyledList>
-        <StyledList>
+          {/* //todo activate this when we have a page for favorites */}
+          {/* <Link to="/favourites">
+            <Star color="white" size={24} />
+          </Link> */}
           <a href="#">
             <Star color="white" size={24} />
           </a>

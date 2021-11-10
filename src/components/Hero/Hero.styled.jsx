@@ -1,86 +1,79 @@
-import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
-import { Person } from "react-bootstrap-icons";
-import { Gear } from "react-bootstrap-icons";
 import helpers from "../helpers";
-import Search from "../Search/Search.styled";
 
-const StyledWrapper = styled.section`
-  /* margin-top: 200px;
-  padding-left: 60px;
-  width: 700px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  color: white;
-  font-size: 24px; */
+// header title
+export const StyledHero = styled.section`
   position: absolute;
   top: 0;
   left: 0;
   z-index: 1;
-  padding: 8rem 4rem;
+  display: grid;
+  place-items: start;
+  height: 20%;
+  padding: 10% 4rem;
   color: ${helpers.colors.text};
+  text-shadow: 2px 2px 5px #000;
+
+  @media only screen and ${helpers.device.sm} {
+    padding: 20% 8rem;
+  }
+
+  @media only screen and ${helpers.device.md} {
+    max-width: 500px;
+    padding: 20% 12rem;
+  }
+
+  @media only screen and ${helpers.device.lg} {
+    max-width: 600px;
+    padding: 12rem;
+    margin: 10rem;
+  }
 `;
 
-const StyledBadge = styled.span`
-  padding: 6px;
-  border-radius: 12px;
-  background-color: rgba(29, 29, 29, 0.5);
-  color: ${helpers.colors.textBadge};
-  font-size: 10px;
-`;
-
-const Styledh1 = styled.h1`
+export const StyledTitle = styled.h1`
   font-size: 22px;
-`;
+  margin: 1rem 0 0 0;
 
-const StyledP = styled.p`
+  @media only screen and ${helpers.device.sm} {
+    font-size: 24px;
+  }
+
+  @media only screen and ${helpers.device.md} {
+    font-size: 32px;
+    margin: 2rem 0 2rem 0;
+  }
+
+  @media only screen and ${helpers.device.lg} {
+    font-size: 64px;
+  } ;
+`;
+export const StyledText = styled.p`
   font-size: 12px;
+
+  @media only screen and ${helpers.device.sm} {
+    font-size: 14px;
+  }
+
+  @media only screen and ${helpers.device.md} {
+    font-size: 18px;
+    line-height: 1.5;
+  }
 `;
 
-const StyledNav = styled.nav`
-  display: flex;
-  justify-content: flex-end;
-`;
-
-const StyledUl = styled.ul`
-  display: none;
-`;
-
-const Styledli = styled.li`
-  list-style: none;
-`;
-
-const Hero = () => {
+function Hero({ title, text }) {
   return (
-    <>
-      <Search />
-
-      <StyledNav>
-        <StyledUl>
-          <Styledli>
-            <a href="#">
-              <Person color="white" size={24} />
-            </a>
-          </Styledli>
-          <Styledli>
-            <a href="#">
-              <Gear color="white" size={24} />
-            </a>
-          </Styledli>
-        </StyledUl>
-      </StyledNav>
-
-      <StyledWrapper>
-        <StyledBadge>Science Finction</StyledBadge>
-        <Styledh1>Godzilla vs. Kong</Styledh1>
-        <StyledP>
-          The world is beset by the appearance of monstrous creatures, but one
-          of them may be the only one who can save humanity.
-        </StyledP>
-      </StyledWrapper>
-    </>
+    <StyledHero>
+      <StyledTitle>{title}</StyledTitle>
+      <StyledText>{text}</StyledText>
+    </StyledHero>
   );
+}
+
+Hero.propTypes = {
+  badge: PropTypes.string,
+  title: PropTypes.string,
+  text: PropTypes.string,
 };
 
 export default Hero;
