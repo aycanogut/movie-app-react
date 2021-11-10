@@ -1,25 +1,14 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import helpers from "../helpers";
-import CardImage from "../../assets/images/img.png";
 
 const StyledCard = styled.article`
-  position: relative;
+  /* position: relative; */
 `;
 
 const StyledImg = styled.img`
   /* css */
-`;
-
-const StyledBadge = styled.span`
-  position: absolute;
-  left: 24px;
-  bottom: 64px;
-  padding: 10px;
-  border-radius: 12px;
-  background-color: rgba(29, 29, 29, 0.5);
-  color: ${helpers.colors.textBadge};
-  font-size: 14px;
 `;
 
 const StyledTitle = styled.header`
@@ -31,14 +20,18 @@ const StyledTitle = styled.header`
   font-size: 24px;
 `;
 
-const Card = () => {
+const Card = ({ image, title }) => {
   return (
     <StyledCard>
-      <StyledImg src={CardImage} />
-      <StyledBadge>Fantasy</StyledBadge>
-      <StyledTitle>Wonder Woman 1984</StyledTitle>
+      <StyledImg src={image} />
+      <StyledTitle>{title}</StyledTitle>
     </StyledCard>
   );
+};
+
+Card.propTypes = {
+  image: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default Card;
