@@ -76,7 +76,6 @@ const Homepage = () => {
               slidesPerView: 3,
             },
           }}
-          style={{ marginBlock: "5rem" }}
         >
           {movies.map((movie, index) => (
             <SwiperSlide key={index}>
@@ -120,7 +119,6 @@ const Homepage = () => {
               slidesPerView: 3,
             },
           }}
-          style={{ marginBlock: "5rem" }}
         >
           {tvShows.map((tv, index) => (
             <SwiperSlide key={index}>
