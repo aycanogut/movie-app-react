@@ -9,17 +9,17 @@ const StyledTitle = styled.header`
 
   @media only screen and ${helpers.device.sm} {
     font-size: 1.8rem;
-    margin: 0 0 0 1.8rem;
+    margin: 2rem 0 2rem 1.8rem;
   }
 
   @media only screen and ${helpers.device.md} {
     font-size: 2.4rem;
-    margin: 0 0 0 2.2rem;
+    margin: 3rem 0 3rem 2.2rem;
   }
 
   @media only screen and ${helpers.device.lg} {
     font-size: 3rem;
-    margin: 0 0 0 4rem;
+    margin: 4rem 0 4rem 4rem;
   }
 `;
 
