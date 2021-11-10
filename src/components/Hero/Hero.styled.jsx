@@ -29,21 +29,7 @@ export const StyledHero = styled.section`
     margin: 10rem;
   }
 `;
-export const StyledBadge = styled.span`
-  padding: 6px;
-  border-radius: 12px;
-  background-color: rgba(29, 29, 29, 0.5);
-  color: ${helpers.colors.textBadge};
-  font-size: 10px;
 
-  @media only screen and ${helpers.device.sm} {
-    font-size: 12px;
-  }
-
-  @media only screen and ${helpers.device.md} {
-    font-size: 14px;
-  } ;
-`;
 export const StyledTitle = styled.h1`
   font-size: 22px;
   margin: 1rem 0 0 0;
@@ -76,10 +62,9 @@ export const StyledText = styled.p`
 
 import React from "react";
 
-function Hero({ badge, title, text }) {
+function Hero({ title, text }) {
   return (
     <StyledHero>
-      <StyledBadge>{badge}</StyledBadge>
       <StyledTitle>{title}</StyledTitle>
       <StyledText>{text}</StyledText>
     </StyledHero>
