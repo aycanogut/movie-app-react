@@ -11,8 +11,9 @@ export const StyledHero = styled.section`
   display: grid;
   place-items: start;
   height: 20%;
-  padding: 12% 4rem;
+  padding: 10% 4rem;
   color: ${helpers.colors.text};
+  text-shadow: 2px 2px 5px #000;
 
   @media only screen and ${helpers.device.sm} {
     padding: 20% 8rem;
@@ -59,8 +60,6 @@ export const StyledText = styled.p`
     line-height: 1.5;
   }
 `;
-
-import React from "react";
 
 function Hero({ title, text }) {
   return (
