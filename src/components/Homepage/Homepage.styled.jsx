@@ -82,6 +82,8 @@ const Homepage = () => {
               <Card
                 image={config.w500images(movie.poster_path)}
                 title={movie.original_title}
+                rating={movie.vote_average}
+                genre={movie.genre_ids}
               />
             </SwiperSlide>
           ))}
@@ -124,7 +126,9 @@ const Homepage = () => {
             <SwiperSlide key={index}>
               <Card
                 image={config.w500images(tv.poster_path)}
-                title={tv.original_title}
+                title={tv.original_name}
+                rating={tv.vote_average}
+                genre={tv.genre_ids}
               />
             </SwiperSlide>
           ))}
