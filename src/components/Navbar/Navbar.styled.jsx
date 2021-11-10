@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import helpers from "../helpers";
 import NavLogo from "../../assets/images/nav-brand.png";
 import { House } from "react-bootstrap-icons";
@@ -81,19 +82,25 @@ const StyledList = styled.li``;
 const Navbar = () => {
   return (
     <StyledNavbar>
-      <StyledBadge src={NavLogo} alt="" />
+      <Link to="/">
+        <StyledBadge src={NavLogo} alt="" />
+      </Link>
       <StlyedUl>
         <StyledList>
-          <a href="#">
+          <Link to="/">
             <House color="white" size={24} />
-          </a>
+          </Link>
         </StyledList>
         <StyledList>
-          <a href="#">
+          <Link to="/search">
             <Search color="white" size={24} />
-          </a>
+          </Link>
         </StyledList>
         <StyledList>
+          {/* //todo activate this when we have a page for favorites */}
+          {/* <Link to="/favourites">
+            <Star color="white" size={24} />
+          </Link> */}
           <a href="#">
             <Star color="white" size={24} />
           </a>
