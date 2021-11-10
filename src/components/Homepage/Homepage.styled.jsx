@@ -46,7 +46,6 @@ const Homepage = () => {
       </StyledHeader>
       <Swiper
         grabCursor={true}
-        slidesPerView={4}
         autoplay={{
           delay: 9999999999999,
           disableOnInteraction: false,
@@ -54,34 +53,35 @@ const Homepage = () => {
         className="mySwiper"
         breakpoints={{
           320: {
-            width: 320,
+            width: 160,
             slidesPerView: 1,
           },
           465: {
-            width: 465,
+            width: 320,
             slidesPerView: 2,
           },
           640: {
-            width: 640,
+            width: 500,
             slidesPerView: 2,
           },
 
           768: {
-            width: 768,
+            width: 700,
             slidesPerView: 3,
           },
           992: {
             width: 992,
-            slidesPerView: 2,
+            slidesPerView: 3,
           },
         }}
       >
         {movies.map((movie, index) => (
           <SwiperSlide key={index}>
             <Card
-              image={config.w500images(movie.backdrop_path)}
+              image={config.w500images(movie.poster_path)}
               title={movie.original_title}
             />
+            {console.log(movie)}
           </SwiperSlide>
         ))}
       </Swiper>
