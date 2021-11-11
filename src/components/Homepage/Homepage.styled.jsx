@@ -50,6 +50,7 @@ const Homepage = () => {
   return (
     <StyledWrapper>
       <Navbar />
+      {/* header hero carousel start */}
       <Carousel>
         {heroMovies.map((movie, index) => (
           <SwiperSlide key={index}>
@@ -64,6 +65,7 @@ const Homepage = () => {
           </SwiperSlide>
         ))}
       </Carousel>
+      {/* header hero carousel end */}
       {/* tv shows section start */}
       <Title title={"New Releases"} />
       <Carousel
