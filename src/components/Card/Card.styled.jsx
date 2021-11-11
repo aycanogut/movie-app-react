@@ -30,37 +30,44 @@ const StyledCardOverflow = styled.div`
   transform: translateX(100%);
   transition: 0.3s ease-in-out;
   background-color: rgba(0, 0, 0, 0.8);
-  padding: 1.2rem;
+  padding: 2rem;
 `;
 
 //todo add this components responsive styles
 const StyledCardInfo = styled.p`
   font-size: 12px;
   color: ${helpers.colors.text};
+
+  @media only screen and ${helpers.device.md} {
+    font-size: 18px;
+  }
+
+  @media only screen and ${helpers.device.lg} {
+    font-size: 20px;
+  } ;
 `;
 
-const StyledTitle = styled.p`
-  font-size: 18px;
+const StyledTitle = styled.header`
+  font-size: 16px;
   margin: 1rem 0;
   font-weight: ${helpers.fontWeight.extraBold};
   color: ${helpers.colors.text};
 
   @media only screen and ${helpers.device.md} {
-    font-size: 22px;
+    font-size: 30px;
   }
 
   @media only screen and ${helpers.device.lg} {
     margin: 2rem 0;
-    font-size: 28px;
+    font-size: 24px;
   } ;
 `;
 
-//todo add this components responsive styles
 const StyledRating = styled.span`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 10%;
+  width: 50%;
   padding: 0.2rem;
   border-radius: 20px;
   font-size: 12px;
@@ -73,6 +80,7 @@ const StyledRating = styled.span`
   }
 
   @media only screen and ${helpers.device.md} {
+    width: 30%;
     font-size: 16px;
   }
 
@@ -84,7 +92,7 @@ const Card = ({ image, title, rating, info }) => {
   return (
     <StyledWrapper>
       <StyledCardOverflow className="overflow">
-        <StyledRating>{rating}</StyledRating>
+        <StyledRating>Rating: {rating}</StyledRating>
         <StyledCardInfo>{info}</StyledCardInfo>
         <StyledTitle>{title}</StyledTitle>
       </StyledCardOverflow>
