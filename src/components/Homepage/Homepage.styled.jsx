@@ -83,7 +83,7 @@ const Homepage = () => {
                 image={config.w500images(movie.poster_path)}
                 title={movie.original_title}
                 rating={movie.vote_average}
-                info={movie.overview}
+                info={movie.overview.slice(0, 180).concat("...")}
               />
             </SwiperSlide>
           ))}
@@ -129,7 +129,7 @@ const Homepage = () => {
                 title={tv.original_name}
                 rating={tv.vote_average}
                 genre={tv.genre_ids}
-                info={tv.overview}
+                info={tv.overview.slice(0, 180).concat("...")}
               />
               {console.log(tv)}
             </SwiperSlide>
