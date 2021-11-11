@@ -5,7 +5,6 @@ import helpers from "../helpers";
 
 const StyledWrapper = styled.div`
   position: relative;
-  display: grid;
   transition: 0.3s ease-in-out;
   cursor: grab;
 
@@ -13,27 +12,31 @@ const StyledWrapper = styled.div`
     grid-area: 1 / 2;
   }
 
-  /* hover effect for title */
-  &:hover p {
-    transition: 0.3s ease-out color;
-    color: ${helpers.colors.body};
-    text-shadow: 2px 2px 2px #fff;
+  /* hover effect for movie details */
+
+  &:hover .overflow {
+    transition: 0.3s ease-in-out;
+    transform: translateX(0);
   }
 `;
 
-//todo add this components responsive styles
-const StyledCardInfo = styled.div`
+const StyledCardOverflow = styled.div`
+  position: absolute;
+  inset: 0;
+  overflow: auto;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  grid-area: 1 / 2;
-  padding: 2rem;
-  text-shadow: 2px 2px 3px #000;
+  justify-content: space-evenly;
+  transform: translateX(100%);
+  transition: 0.3s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 1.2rem;
+`;
 
-  .details {
-    display: flex;
-    justify-content: space-between;
-  }
+//todo add this components responsive styles
+const StyledCardInfo = styled.p`
+  font-size: 12px;
+  color: ${helpers.colors.text};
 `;
 
 const StyledTitle = styled.p`
@@ -57,7 +60,7 @@ const StyledRating = styled.span`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 60%;
+  width: 10%;
   padding: 0.2rem;
   border-radius: 20px;
   font-size: 12px;
@@ -70,35 +73,22 @@ const StyledRating = styled.span`
   }
 
   @media only screen and ${helpers.device.md} {
-    width: 40%;
     font-size: 16px;
   }
 
   @media only screen and ${helpers.device.lg} {
-    width: 30%;
   }
 `;
 
-const StyledButton = styled.button``;
-
-//todo add this components responsive styles
-// const StyledGenre = styled.span`
-//   font-size: 20px;
-//   color: ${helpers.colors.text};
-// `;
-
-const Card = ({ image, title, rating, genre, openModal }) => {
+const Card = ({ image, title, rating, info }) => {
   return (
     <StyledWrapper>
-      <img src={image} />
-      <StyledCardInfo>
-        {/* <StyledGenre>{genre}</StyledGenre> */}
+      <StyledCardOverflow className="overflow">
+        <StyledRating>{rating}</StyledRating>
+        <StyledCardInfo>{info}</StyledCardInfo>
         <StyledTitle>{title}</StyledTitle>
-        <div className="details">
-          <StyledRating>{rating} Points</StyledRating>
-          <StyledButton onClick={openModal}>Details</StyledButton>
-        </div>
-      </StyledCardInfo>
+      </StyledCardOverflow>
+      <img src={image} />
     </StyledWrapper>
   );
 };
@@ -107,7 +97,7 @@ Card.propTypes = {
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   rating: PropTypes.number,
-  genre: PropTypes.array,
+  info: PropTypes.string.isRequired,
 };
 
 export default Card;
