@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Header from "../Header/Header.styled";
 import Title from "../Title/Title.styled";
 import Card from "../Card/Card.styled";
+import Modal from "../Modal/Modal.styled";
 
 // Import Swiper styles
 import "swiper/css";
@@ -20,6 +21,11 @@ const StyledWrapper = styled.div`
 const Homepage = () => {
   const [movies, setMovies] = useState([]);
   const [tvShows, setTvShows] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => {
+    setShowModal((prev) => !prev); // toggle
+  };
 
   useEffect(() => {
     const getMovies = async () => {
@@ -84,6 +90,7 @@ const Homepage = () => {
                 title={movie.original_title}
                 rating={movie.vote_average}
                 genre={movie.genre_ids}
+                openModal={openModal}
               />
             </SwiperSlide>
           ))}
@@ -129,11 +136,13 @@ const Homepage = () => {
                 title={tv.original_name}
                 rating={tv.vote_average}
                 genre={tv.genre_ids}
+                openModal={openModal}
               />
             </SwiperSlide>
           ))}
         </Swiper>
       </StyledWrapper>
+      <Modal showModal={showModal} setShowModal={setShowModal} />
     </>
   );
 };
