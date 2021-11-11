@@ -3,10 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import helpers from "../helpers";
 import NavLogo from "../../assets/images/nav-brand.png";
-import { House } from "react-bootstrap-icons";
-import { Search } from "react-bootstrap-icons";
-
-import { Star } from "react-bootstrap-icons";
+import { House, Search, Star } from "react-bootstrap-icons";
 
 const StyledNavbar = styled.nav`
   position: absolute;
