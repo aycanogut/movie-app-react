@@ -8,5 +8,4 @@ Final project for Kodluyoruz Hatay 131. Front-End Development Bootcamp.
 - vite.js
 - styled-components
 - Bootstrap Icons
-- React Spring
 - axios
