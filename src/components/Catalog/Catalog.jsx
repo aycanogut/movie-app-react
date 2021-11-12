@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
+import styled from "styled-components";
 import { SwiperSlide } from "swiper/react";
+import helpers from "../helpers";
 import CardContainer from "../CardContainer/CardContainer.styled";
 import Carousel from "../Carousel/Carousel";
 import Hero from "../Hero/Hero.styled";
@@ -10,6 +12,15 @@ import SearchInput from "../SearchInput/SearchInput.styled";
 import tmdbApi, { movieType } from "../../api/tmdbApi.js";
 import config from "../../api/config.js";
 
+const StyledWrapper = styled.div`
+  margin: 6rem auto 0 auto;
+  max-width: 1920px;
+  max-height: 1080px;
+
+  @media only screen and ${helpers.device.lg} {
+    margin: 0 auto;
+  }
+`;
 const Catalog = () => {
   const [movies, setMovies] = useState([]);
 
@@ -30,7 +41,7 @@ const Catalog = () => {
   }, []);
 
   return (
-    <>
+    <StyledWrapper>
       <Navbar />
       <Carousel>
         {movies.map((movie, index) => (
@@ -48,7 +59,7 @@ const Catalog = () => {
       </Carousel>
       <SearchInput />
       <CardContainer />
-    </>
+    </StyledWrapper>
   );
 };
 
