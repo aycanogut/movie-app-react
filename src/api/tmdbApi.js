@@ -1,5 +1,7 @@
 import apiCall from "./apiCall";
 
+// todo look through all of this objects and remove the not used ones
+
 export const category = {
   movie: "movie",
   tv: "tv",
