@@ -30,7 +30,11 @@ const StyledCardOverflow = styled.div`
   transform: translateX(100%);
   transition: 0.3s ease-in-out;
   background-color: rgba(0, 0, 0, 0.8);
-  padding: 2rem;
+  padding: 1rem;
+
+  @media only screen and ${helpers.device.md} {
+    padding: 2rem;
+  } ;
 `;
 
 //todo add this components responsive styles
@@ -39,11 +43,11 @@ const StyledCardInfo = styled.p`
   color: ${helpers.colors.text};
 
   @media only screen and ${helpers.device.md} {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   @media only screen and ${helpers.device.lg} {
-    font-size: 20px;
+    font-size: 18px;
   } ;
 `;
 
@@ -54,7 +58,7 @@ const StyledTitle = styled.header`
   color: ${helpers.colors.text};
 
   @media only screen and ${helpers.device.md} {
-    font-size: 30px;
+    font-size: 26px;
   }
 
   @media only screen and ${helpers.device.lg} {
@@ -80,11 +84,12 @@ const StyledRating = styled.span`
   }
 
   @media only screen and ${helpers.device.md} {
-    width: 30%;
+    width: 40%;
     font-size: 16px;
   }
 
   @media only screen and ${helpers.device.lg} {
+    width: 30%;
   }
 `;
 
