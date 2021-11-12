@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { SwiperSlide } from "swiper/react";
 import helpers from "../helpers";
+import carouselBreakpoints from "../../helpers/carouselBreakpoints";
+
 import Navbar from "../Navbar/Navbar.styled";
 import Title from "../Title/Title.styled";
 import Card from "../Card/Card.styled";
@@ -68,31 +70,7 @@ const Homepage = () => {
       {/* header hero carousel end */}
       {/* tv shows section start */}
       <Title title={"New Releases"} />
-      <Carousel
-        breakpoints={{
-          320: {
-            width: 160,
-            slidesPerView: 1,
-          },
-          465: {
-            width: 320,
-            slidesPerView: 2,
-          },
-          640: {
-            width: 500,
-            slidesPerView: 2,
-          },
-
-          768: {
-            width: 700,
-            slidesPerView: 3,
-          },
-          992: {
-            width: 992,
-            slidesPerView: 3,
-          },
-        }}
-      >
+      <Carousel breakpoints={carouselBreakpoints}>
         {movies.map((movie, index) => (
           <SwiperSlide key={index}>
             <Card
@@ -107,31 +85,7 @@ const Homepage = () => {
       {/* tv shows section end */}
       {/* movies section start */}
       <Title title={"Featured TV Shows"} />
-      <Carousel
-        breakpoints={{
-          320: {
-            width: 160,
-            slidesPerView: 1,
-          },
-          465: {
-            width: 320,
-            slidesPerView: 2,
-          },
-          640: {
-            width: 500,
-            slidesPerView: 2,
-          },
-
-          768: {
-            width: 700,
-            slidesPerView: 3,
-          },
-          992: {
-            width: 992,
-            slidesPerView: 3,
-          },
-        }}
-      >
+      <Carousel breakpoints={carouselBreakpoints}>
         {tvShows.map((tv, index) => (
           <SwiperSlide key={index}>
             <Card
