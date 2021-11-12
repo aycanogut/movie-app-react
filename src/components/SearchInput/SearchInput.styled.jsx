@@ -24,6 +24,19 @@ const SearchBox = styled.section`
   background-color: ${helpers.colors.body};
   border: 1px solid gray;
   border-radius: 3rem;
+
+  @media only screen and ${helpers.device.md} {
+    width: 50%;
+  }
+
+  @media only screen and ${helpers.device.lg} {
+    position: absolute;
+    width: 40%;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 1;
+  } ;
 `;
 
 const SearchInput = () => {
