@@ -27,7 +27,7 @@ const StyledWrapper = styled.div`
 const Homepage = () => {
   const [movies, setMovies] = useState([]);
   const [tvShows, setTvShows] = useState([]);
-  const heroMovies = movies.slice(0, 5);
+  const heroImages = movies.slice(0, 5);
 
   useEffect(() => {
     const getMovies = async () => {
@@ -54,7 +54,7 @@ const Homepage = () => {
       <Navbar />
       {/* header hero carousel start */}
       <Carousel>
-        {heroMovies.map((movie, index) => (
+        {heroImages.map((movie, index) => (
           <SwiperSlide key={index}>
             <img
               src={config.images(movie.backdrop_path)}

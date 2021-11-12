@@ -22,7 +22,7 @@ const StyledWrapper = styled.div`
   }
 `;
 const Catalog = () => {
-  const [movies, setMovies] = useState([]);
+  const [heroImage, setHeroImage] = useState([]);
 
   useEffect(() => {
     const getMovies = async () => {
@@ -32,7 +32,7 @@ const Catalog = () => {
           params,
         });
 
-        setMovies(response.results.slice(11, 16));
+        setHeroImage(response.results.slice(11, 16));
       } catch {
         console.log("error");
       }
@@ -44,7 +44,7 @@ const Catalog = () => {
     <StyledWrapper>
       <Navbar />
       <Carousel>
-        {movies.map((movie, index) => (
+        {heroImage.map((movie, index) => (
           <SwiperSlide key={index}>
             <img
               src={config.images(movie.backdrop_path)}
