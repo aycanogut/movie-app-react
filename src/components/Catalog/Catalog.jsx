@@ -21,7 +21,7 @@ const Catalog = () => {
           params,
         });
 
-        setMovies(response.results.slice(0, 5));
+        setMovies(response.results.slice(11, 16));
       } catch {
         console.log("error");
       }
