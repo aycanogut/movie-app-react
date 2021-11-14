@@ -30,7 +30,7 @@ const Homepage = () => {
   const heroImages = movies.slice(0, 5);
 
   useEffect(() => {
-    const getMovies = async () => {
+    const getHeroImages = async () => {
       const params = { page: 1 };
       try {
         const responseMovies = await tmdbApi.getMoviesList(movieType.popular, {
@@ -46,7 +46,7 @@ const Homepage = () => {
         console.log("error");
       }
     };
-    getMovies();
+    getHeroImages();
   }, []);
 
   return (
