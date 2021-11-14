@@ -13,12 +13,12 @@ const StyledWrapper = styled.div`
   }
 
   /* hover effect for movie details */
-
   &:hover .overflow {
     transition: 0.3s ease-in-out;
     transform: translateX(0);
   }
 `;
+// todo update card hover effect one last one (upper block)
 
 const StyledCardOverflow = styled.div`
   position: absolute;
@@ -37,7 +37,6 @@ const StyledCardOverflow = styled.div`
   } ;
 `;
 
-//todo add this components responsive styles
 const StyledCardInfo = styled.p`
   font-size: 12px;
   color: ${helpers.colors.text};
@@ -109,7 +108,7 @@ const Card = ({ image, title, rating, info }) => {
 Card.propTypes = {
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  rating: PropTypes.number,
+  rating: PropTypes.number.isRequired,
   info: PropTypes.string.isRequired,
 };
 
