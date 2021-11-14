@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import styled from "styled-components";
 import { SwiperSlide } from "swiper/react";
 import helpers from "../helpers";
@@ -21,11 +22,12 @@ const StyledWrapper = styled.div`
     margin: 0 auto;
   }
 `;
+
 const Catalog = () => {
   const [heroImage, setHeroImage] = useState([]);
 
   useEffect(() => {
-    const getMovies = async () => {
+    const getHeroImages = async () => {
       const params = { page: 1 };
       try {
         const response = await tmdbApi.getMoviesList(movieType.popular, {
@@ -37,7 +39,7 @@ const Catalog = () => {
         console.log("error");
       }
     };
-    getMovies();
+    getHeroImages();
   }, []);
 
   return (
