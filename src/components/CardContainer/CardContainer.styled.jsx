@@ -39,7 +39,6 @@ const StyledTitleWrapper = styled.div`
 `;
 
 const CardContainer = ({ search }) => {
-  console.log(typeof search);
   return (
     <>
       <StyledHeader>
