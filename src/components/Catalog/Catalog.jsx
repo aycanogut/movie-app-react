@@ -20,14 +20,15 @@ const StyledWrapper = styled.div`
 `;
 
 const Catalog = () => {
-  const { movies, setMovies, search, setSearch, submitRequest } = useData();
+  const { popularMovies, setPopularMovies, search, setSearch, submitRequest } =
+    useData();
 
   const submitSearch = (search) => {
     submitRequest(url.search(search), setSearch);
   };
 
   const fetchMovies = () => {
-    submitRequest(url.movies(), setMovies);
+    submitRequest(url.popularMovies(), setPopularMovies);
   };
 
   useEffect(() => {
@@ -38,7 +39,7 @@ const Catalog = () => {
     <StyledWrapper>
       <Navbar />
       <Carousel>
-        {movies.map((movie, index) => (
+        {popularMovies.map((movie, index) => (
           <SwiperSlide key={index}>
             <img
               src={api.images(movie.backdrop_path)}
