@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 import { CaretRight } from "react-bootstrap-icons";
+import { api } from "../../hooks/useData";
 import helpers from "../helpers";
 import Title from "../Title/Title.styled";
 import Card from "../Card/Card.styled";
@@ -30,34 +32,39 @@ const StyledHeader = styled.header`
   color: ${helpers.colors.text};
 `;
 
-const CardContainer = () => {
+const StyledTitleWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const CardContainer = ({ search }) => {
+  console.log(typeof search);
   return (
     <>
       <StyledHeader>
-        <Title>Movies</Title>
-        <CaretRight color="white" size={24} />
+        <StyledTitleWrapper>
+          <Title title={"Results"} />
+          <CaretRight color="white" size={24} />
+        </StyledTitleWrapper>
       </StyledHeader>
       <StyledCardContainer>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {search.map((item, index) => (
+          <Card
+            key={index}
+            image={api.w500images(item.poster_path)}
+            title={item.original_name}
+            rating={item.vote_average}
+            info={item.overview}
+          />
+        ))}
       </StyledCardContainer>
     </>
   );
+};
+
+CardContainer.propTypes = {
+  search: PropTypes.array,
 };
 
 export default CardContainer;
