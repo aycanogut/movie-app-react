@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import { SwiperSlide } from "swiper/react";
-import useData from "../../hooks/useData";
-import { api } from "../../hooks/useData";
+import useData, { api, url } from "../../hooks/useData";
 import helpers from "../helpers";
 import carouselBreakpoints from "../../helpers/carouselBreakpoints";
 import Navbar from "../Navbar/Navbar.styled";
@@ -22,11 +21,15 @@ const StyledWrapper = styled.div`
 `;
 
 const Homepage = () => {
-  const { movies, series, getMovies, getSeries } = useData();
+  const { movies, series, setMovies, setSeries, submitRequest } = useData();
+
+  const fetchData = () => {
+    submitRequest(url.movies(), setMovies);
+    submitRequest(url.series(), setSeries);
+  };
 
   useEffect(() => {
-    getMovies();
-    getSeries();
+    fetchData();
   }, []);
 
   return (
@@ -57,7 +60,7 @@ const Homepage = () => {
               image={api.w500images(movie.poster_path)}
               title={movie.original_title}
               rating={movie.vote_average}
-              info={movie.overview.slice(0, 180).concat("...")}
+              info={movie.overview.substring(0, 180).concat("...")}
             />
           </SwiperSlide>
         ))}
@@ -72,7 +75,7 @@ const Homepage = () => {
               image={api.w500images(tv.poster_path)}
               title={tv.original_name}
               rating={tv.vote_average}
-              info={tv.overview.slice(0, 180).concat("...")}
+              info={tv.overview.substring(0, 180).concat("...")}
             />
           </SwiperSlide>
         ))}

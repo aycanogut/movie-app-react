@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import { SwiperSlide } from "swiper/react";
-import useData from "../../hooks/useData";
-import { api } from "../../hooks/useData";
+import useData, { api, url } from "../../hooks/useData";
 import helpers from "../helpers";
 import CardContainer from "../CardContainer/CardContainer.styled";
 import Carousel from "../Carousel/Carousel";
@@ -21,10 +20,18 @@ const StyledWrapper = styled.div`
 `;
 
 const Catalog = () => {
-  const { movies, getMovies } = useData();
+  const { movies, setMovies, search, setSearch, submitRequest } = useData();
+
+  const submitSearch = (search) => {
+    submitRequest(url.search(search), setSearch);
+  };
+
+  const fetchMovies = () => {
+    submitRequest(url.movies(), setMovies);
+  };
 
   useEffect(() => {
-    getMovies();
+    fetchMovies();
   }, []);
 
   return (
@@ -44,8 +51,8 @@ const Catalog = () => {
           </SwiperSlide>
         ))}
       </Carousel>
-      <SearchInput />
-      <CardContainer />
+      <SearchInput submitSearch={submitSearch} />
+      <CardContainer search={search} />
     </StyledWrapper>
   );
 };
