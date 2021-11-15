@@ -21,11 +21,26 @@ const StyledWrapper = styled.div`
 `;
 
 const Homepage = () => {
-  const { movies, series, setMovies, setSeries, submitRequest } = useData();
+  const {
+    popularMovies,
+    upcomingMovies,
+    popularSeries,
+    topRatedMovies,
+    topRatedSeries,
+    setPopularMovies,
+    setUpComingMovies,
+    setPopularSeries,
+    setTopRatedMovies,
+    setTopRatedSeries,
+    submitRequest,
+  } = useData();
 
   const fetchData = () => {
-    submitRequest(url.movies(), setMovies);
-    submitRequest(url.series(), setSeries);
+    submitRequest(url.popularMovies(), setPopularMovies);
+    submitRequest(url.upcomingMovies(), setUpComingMovies);
+    submitRequest(url.popularSeries(), setPopularSeries);
+    submitRequest(url.topRatedMovies(), setTopRatedMovies);
+    submitRequest(url.topRatedSeries(), setTopRatedSeries);
   };
 
   useEffect(() => {
@@ -35,9 +50,9 @@ const Homepage = () => {
   return (
     <StyledWrapper>
       <Navbar />
-      {/* header hero carousel start */}
+
       <Carousel>
-        {movies.map((movie, index) => (
+        {popularMovies.map((movie, index) => (
           <SwiperSlide key={index}>
             <img
               src={api.images(movie.backdrop_path)}
@@ -50,11 +65,10 @@ const Homepage = () => {
           </SwiperSlide>
         ))}
       </Carousel>
-      {/* header hero carousel end */}
-      {/* tv shows section start */}
+
       <Title title={"New Releases"} />
       <Carousel breakpoints={carouselBreakpoints}>
-        {movies.map((movie, index) => (
+        {popularMovies.map((movie, index) => (
           <SwiperSlide key={index}>
             <Card
               image={api.w500images(movie.poster_path)}
@@ -65,11 +79,24 @@ const Homepage = () => {
           </SwiperSlide>
         ))}
       </Carousel>
-      {/* tv shows section end */}
-      {/* movies section start */}
+
+      <Title title={"Upcoming Movies"} />
+      <Carousel breakpoints={carouselBreakpoints}>
+        {upcomingMovies.map((movie, index) => (
+          <SwiperSlide key={index}>
+            <Card
+              image={api.w500images(movie.poster_path)}
+              title={movie.original_title}
+              rating={movie.vote_average}
+              info={movie.overview.substring(0, 180).concat("...")}
+            />
+          </SwiperSlide>
+        ))}
+      </Carousel>
+
       <Title title={"Featured TV Shows"} />
       <Carousel breakpoints={carouselBreakpoints}>
-        {series.map((tv, index) => (
+        {popularSeries.map((tv, index) => (
           <SwiperSlide key={index}>
             <Card
               image={api.w500images(tv.poster_path)}
@@ -80,7 +107,34 @@ const Homepage = () => {
           </SwiperSlide>
         ))}
       </Carousel>
-      {/* movies section start */}
+
+      <Title title={"Top Rated Movies"} />
+      <Carousel breakpoints={carouselBreakpoints}>
+        {topRatedMovies.map((movie, index) => (
+          <SwiperSlide key={index}>
+            <Card
+              image={api.w500images(movie.poster_path)}
+              title={movie.original_title}
+              rating={movie.vote_average}
+              info={movie.overview.substring(0, 180).concat("...")}
+            />
+          </SwiperSlide>
+        ))}
+      </Carousel>
+
+      <Title title={"Top Rated TV Shows"} />
+      <Carousel breakpoints={carouselBreakpoints}>
+        {topRatedSeries.map((movie, index) => (
+          <SwiperSlide key={index}>
+            <Card
+              image={api.w500images(movie.poster_path)}
+              title={movie.original_title}
+              rating={movie.vote_average}
+              info={movie.overview.substring(0, 180).concat("...")}
+            />
+          </SwiperSlide>
+        ))}
+      </Carousel>
     </StyledWrapper>
   );
 };

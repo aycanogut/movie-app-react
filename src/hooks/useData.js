@@ -13,14 +13,25 @@ export const api = {
 export const url = {
   search: (item) =>
     `${api.baseUrl}search/multi?api_key=${api.key}&query=${item}`,
-  movies: () => `${api.baseUrl}movie/popular?api_key=${api.key}&language=en-US`,
-  series: () => `${api.baseUrl}tv/popular?api_key=${api.key}&language=en-US`,
+  popularMovies: () =>
+    `${api.baseUrl}movie/popular?api_key=${api.key}&language=en-US`,
+  upcomingMovies: () =>
+    `${api.baseUrl}movie/upcoming?api_key=${api.key}&language=en-US`,
+  popularSeries: () =>
+    `${api.baseUrl}tv/popular?api_key=${api.key}&language=en-US`,
+  topRatedMovies: () =>
+    `${api.baseUrl}movie/top_rated?api_key=${api.key}&language=en-US`,
+  topRatedSeries: () =>
+    `${api.baseUrl}tv/top_rated?api_key=${api.key}&language=en-US`,
 };
 
 // custom hook for fetch data from api
 const useData = () => {
-  const [movies, setMovies] = useState([]);
-  const [series, setSeries] = useState([]);
+  const [popularMovies, setPopularMovies] = useState([]);
+  const [upcomingMovies, setUpComingMovies] = useState([]);
+  const [topRatedMovies, setTopRatedMovies] = useState([]);
+  const [popularSeries, setPopularSeries] = useState([]);
+  const [topRatedSeries, setTopRatedSeries] = useState([]);
   const [search, setSearch] = useState([]);
 
   // this function is using in the homepage and catalog pages for fetching data from api
@@ -37,11 +48,17 @@ const useData = () => {
   };
 
   return {
-    movies,
-    series,
+    popularMovies,
+    upcomingMovies,
+    popularSeries,
+    topRatedMovies,
+    topRatedSeries,
     search,
-    setMovies,
-    setSeries,
+    setPopularMovies,
+    setUpComingMovies,
+    setPopularSeries,
+    setTopRatedMovies,
+    setTopRatedSeries,
     setSearch,
     submitRequest,
   };
