@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 import { Search } from "react-bootstrap-icons";
 import helpers from "../helpers";
 
@@ -9,7 +10,9 @@ const StyledInput = styled.input`
   background-color: ${helpers.colors.body};
   border: none;
 
-  &::placeholder {
+  &::placeholder,
+  &:focus,
+  &:focus-visible {
     color: ${helpers.colors.text};
   }
 `;
@@ -39,15 +42,43 @@ const SearchBox = styled.section`
   } ;
 `;
 
-const SearchInput = () => {
+const SearchInput = ({ submitSearch }) => {
+  const inputRef = useRef(null);
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const value = inputRef.current.value;
+
+    submitSearch(value);
+    inputRef.current.value = "";
+  };
+
+  const onKeyDown = (e) => {
+    e.code === "Enter" || e.code === "NumpadEnter" ? handleSearch(e) : null;
+  };
+
   return (
     <>
       <SearchBox>
-        <Search size={24} color="white" style={{ marginRight: 12 }} />
-        <StyledInput placeholder="Search Movie" />
+        <StyledInput
+          placeholder="Search something.."
+          ref={inputRef}
+          onSubmit={handleSearch}
+          onKeyDown={(e) => onKeyDown(e)}
+        />
+        <Search
+          size={24}
+          color="white"
+          style={{ marginRight: 12 }}
+          onClick={handleSearch}
+        />
       </SearchBox>
     </>
   );
+};
+
+SearchInput.propTypes = {
+  submitSearch: PropTypes.func,
 };
 
 export default SearchInput;
