@@ -12,10 +12,15 @@ const StyledWrapper = styled.div`
     grid-area: 1 / 2;
   }
 
+  .overflow {
+  }
   /* hover effect for movie details */
   &:hover .overflow {
     transition: 0.3s ease-in-out;
-    transform: translateX(0);
+    transform: translateY(0);
+  }
+
+  &::last-child {
   }
 `;
 // todo update card hover effect one last one (upper block)
@@ -27,7 +32,7 @@ const StyledCardOverflow = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  transform: translateX(100%);
+  transform: translateY(100%);
   transition: 0.3s ease-in-out;
   background-color: rgba(0, 0, 0, 0.8);
   padding: 1rem;
