@@ -128,7 +128,7 @@ const Homepage = () => {
           <SwiperSlide key={index}>
             <Card
               image={api.w500images(movie.poster_path)}
-              title={movie.original_title}
+              title={movie.original_name}
               rating={movie.vote_average}
               info={movie.overview.substring(0, 180).concat("...")}
             />
