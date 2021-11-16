@@ -58,7 +58,7 @@ const SearchInput = ({ submitSearch }) => {
     e.preventDefault();
     const value = inputRef.current.value;
 
-    submitSearch(value);
+    value || value !== "" ? submitSearch(value) : false;
     inputRef.current.value = "";
   };
 
