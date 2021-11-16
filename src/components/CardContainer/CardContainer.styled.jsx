@@ -73,7 +73,8 @@ const CardContainer = ({ search }) => {
               item.overview === null ||
               item.overview === undefined ||
               !item.overview
-                ? "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio necessitatibus debitis esse aliquid."
+                ? `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Di
+                stinctio necessitatibus debitis esse aliquid.`
                 : item.overview.slice(0, 100)
             }
           />
