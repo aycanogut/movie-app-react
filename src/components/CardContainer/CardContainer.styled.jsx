@@ -52,9 +52,9 @@ const CardContainer = ({ search }) => {
           <Card
             key={index}
             image={api.w500images(item.poster_path)}
-            title={item.original_name}
+            title={item.original_title || item.original_name}
             rating={item.vote_average}
-            info={item.overview}
+            info={item.overview.substring(0, 180) + "..."}
           />
         ))}
       </StyledCardContainer>
