@@ -72,7 +72,7 @@ const StyledRating = styled.span`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 50%;
+  white-space: nowrap;
   padding: 0.2rem;
   border-radius: 20px;
   font-size: 12px;
@@ -85,12 +85,7 @@ const StyledRating = styled.span`
   }
 
   @media only screen and ${helpers.device.md} {
-    width: 40%;
     font-size: 16px;
-  }
-
-  @media only screen and ${helpers.device.lg} {
-    width: 30%;
   }
 `;
 
@@ -110,7 +105,7 @@ const Card = ({ image, title, rating, info }) => {
 Card.propTypes = {
   image: PropTypes.string,
   title: PropTypes.string,
-  rating: PropTypes.number,
+  rating: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   info: PropTypes.string,
 };
 
