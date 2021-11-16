@@ -26,6 +26,7 @@
     "eslint-plugin-react": "^7.26.1",
     "prettier": "^2.4.1",
     "prop-types": "^15.7.2",
-    "vite": "^2.6.4"
+    "vite": "^2.6.4",
+    "vite-plugin-imagemin": "^0.4.6"
   }
 }
