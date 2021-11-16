@@ -1,13 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-
-// configuration for themoviedb api
-export const api = {
-  baseUrl: "https://api.themoviedb.org/3/",
-  key: "12a8a34f7770ec8f55d92a5f438fc87e",
-  images: (path) => `https://image.tmdb.org/t/p/original/${path}`,
-  w500images: (path) => `https://image.tmdb.org/t/p/w500/${path}`,
-};
+import api from "../api/api.js";
 
 // url configuration
 export const url = {
