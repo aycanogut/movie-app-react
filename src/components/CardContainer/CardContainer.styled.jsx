@@ -2,8 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { CaretRight } from "react-bootstrap-icons";
-import { api } from "../../hooks/useData";
 import helpers from "../helpers";
+import api from "../../api/api.js";
+import fallbackImage from "../../assets/images/fallback-card-image.png";
 import Title from "../Title/Title.styled";
 import Card from "../Card/Card.styled";
 
@@ -51,10 +52,30 @@ const CardContainer = ({ search }) => {
         {search.map((item, index) => (
           <Card
             key={index}
-            image={api.w500images(item.poster_path)}
-            title={item.original_title || item.original_name}
-            rating={item.vote_average}
-            info={item.overview.substring(0, 180) + "..."}
+            image={
+              item.poster_path === null || item.poster_path === undefined
+                ? fallbackImage
+                : api.w500images(item.poster_path)
+            }
+            title={
+              item.original_title || item.original_name
+                ? item.original_title || item.original_name
+                : "No title"
+            }
+            rating={
+              item.vote_average === 0 ||
+              item.vote_average === undefined ||
+              !item.vote_average
+                ? "None"
+                : item.vote_average
+            }
+            info={
+              item.overview === null ||
+              item.overview === undefined ||
+              !item.overview
+                ? "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio necessitatibus debitis esse aliquid."
+                : item.overview.slice(0, 100)
+            }
           />
         ))}
       </StyledCardContainer>
