@@ -6,7 +6,7 @@ import helpers from "../helpers";
 const StyledWrapper = styled.div`
   position: relative;
   transition: 0.3s ease-in-out;
-  cursor: grab;
+  overflow: hidden;
 
   img {
     grid-area: 1 / 2;
@@ -18,9 +18,6 @@ const StyledWrapper = styled.div`
   &:hover .overflow {
     transition: 0.3s ease-in-out;
     transform: translateY(0);
-  }
-
-  &::last-child {
   }
 `;
 // todo update card hover effect one last one (upper block)
