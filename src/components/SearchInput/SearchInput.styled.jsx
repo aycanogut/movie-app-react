@@ -4,26 +4,13 @@ import PropTypes from "prop-types";
 import { Search } from "react-bootstrap-icons";
 import helpers from "../helpers";
 
-const StyledInput = styled.input`
-  width: 100%;
-  font-size: 12px;
-  background-color: ${helpers.colors.body};
-  border: none;
-
-  &::placeholder,
-  &:focus,
-  &:focus-visible {
-    color: ${helpers.colors.text};
-  }
-`;
-
 const SearchBox = styled.section`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   width: 70%;
   margin: 2rem auto;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 2rem;
   background-color: ${helpers.colors.body};
   border: 1px solid gray;
   border-radius: 3rem;
@@ -40,6 +27,28 @@ const SearchBox = styled.section`
     transform: translate(-50%, 0);
     z-index: 1;
   } ;
+`;
+
+const StyledInput = styled.input`
+  width: 100%;
+  font-size: 12px;
+  background-color: ${helpers.colors.body};
+  border: none;
+
+  &:focus {
+    outline: none;
+    border: none;
+  }
+
+  &::placeholder,
+  &:focus,
+  &:focus-visible {
+    color: ${helpers.colors.text};
+  }
+`;
+
+const StyledSubmit = styled.div`
+  cursor: pointer;
 `;
 
 const SearchInput = ({ submitSearch }) => {
@@ -66,12 +75,14 @@ const SearchInput = ({ submitSearch }) => {
           onSubmit={handleSearch}
           onKeyDown={(e) => onKeyDown(e)}
         />
-        <Search
-          size={24}
-          color="white"
-          style={{ marginRight: 12 }}
-          onClick={handleSearch}
-        />
+        <StyledSubmit>
+          <Search
+            size={24}
+            color="white"
+            style={{ marginRight: 12 }}
+            onClick={handleSearch}
+          />
+        </StyledSubmit>
       </SearchBox>
     </>
   );
