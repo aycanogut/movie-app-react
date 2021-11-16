@@ -21,6 +21,7 @@ const Carousel = ({ children, breakpoints }) => {
       }}
       className="mySwiper"
       breakpoints={breakpoints}
+      style={{ cursor: "grab" }}
     >
       {children}
     </Swiper>
