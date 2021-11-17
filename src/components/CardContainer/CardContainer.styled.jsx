@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import helpers from "../helpers";
+import useData, { url } from "../../hooks/useData";
 import api from "../../api/api.js";
+import helpers from "../helpers";
 import fallbackImage from "../../assets/images/fallback-card-image.png";
 import Title from "../Title/Title.styled";
 import Card from "../Card/Card.styled";
@@ -10,25 +11,32 @@ import Card from "../Card/Card.styled";
 const StyledCardContainer = styled.section`
   display: grid;
   place-items: center;
-  gap: 3rem;
+  gap: 2.4rem;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 1rem;
 
   @media only screen and ${helpers.device.sm} {
     grid-template-columns: 1fr 1fr;
+
+    padding: 0 2rem;
   }
 
   @media only screen and ${helpers.device.md} {
     grid-template-columns: 1fr 1fr 1fr;
+    padding: 0 3rem;
   }
 
   @media only screen and ${helpers.device.lg} {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    padding: 0 5rem;
   }
 `;
 
 const StyledHeader = styled.header`
   display: flex;
   align-content: center;
-  margin-block: 4rem;
+  margin: 1rem;
   color: ${helpers.colors.text};
 `;
 
