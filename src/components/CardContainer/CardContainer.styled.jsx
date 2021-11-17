@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import useData, { url } from "../../hooks/useData";
 import api from "../../api/api.js";
 import helpers from "../helpers";
 import fallbackImage from "../../assets/images/fallback-card-image.png";
