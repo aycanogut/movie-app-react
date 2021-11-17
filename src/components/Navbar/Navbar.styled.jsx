@@ -112,7 +112,7 @@ const Navbar = ({ source }) => {
 };
 
 Navbar.propTypes = {
-  source: PropTypes.string.isRequired,
+  source: PropTypes.string,
 };
 
 export default Navbar;
