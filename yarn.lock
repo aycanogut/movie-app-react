@@ -1587,13 +1587,6 @@
     "split-on-first" "^1.0.0"
     "strict-uri-encode" "^2.0.0"
 
-"react-bootstrap-icons@^1.6.1":
-  "integrity" "sha512-0xoFKK0soRBx7F0+R8lHmNp7THqaCMnAKm2SfySeTTmyk2HOG6SMXuoqlEI8SPZu2ez4u3dHlrXoo5/2IGWCeA=="
-  "resolved" "https://registry.npmjs.org/react-bootstrap-icons/-/react-bootstrap-icons-1.6.1.tgz"
-  "version" "1.6.1"
-  dependencies:
-    "prop-types" "^15.7.2"
-
 "react-dom@^16.6.3", "react-dom@^17.0.0", "react-dom@>= 16.8.0", "react-dom@>=16.8":
   "integrity" "sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-17.0.2.tgz"
@@ -1640,7 +1633,7 @@
   dependencies:
     "history" "^5.1.0"
 
-"react@^16.6.3", "react@^16.8.6 || ^17", "react@^17.0.0", "react@>= 16.8.0", "react@>=16.3.0", "react@>=16.8", "react@>=16.8.0", "react@17.0.2":
+"react@^16.6.3", "react@^17.0.0", "react@>= 16.8.0", "react@>=16.3.0", "react@>=16.8", "react@>=16.8.0", "react@17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   "version" "17.0.2"
