@@ -13,6 +13,8 @@ import Hero from "../Hero/Hero.styled";
 
 const StyledWrapper = styled.div`
   margin: 6rem auto 0 auto;
+  max-width: 1920px;
+  max-height: 1080px;
 
   @media only screen and ${helpers.device.lg} {
     margin: 0 auto;
@@ -21,7 +23,7 @@ const StyledWrapper = styled.div`
 
 const StyledImage = styled.img`
   width: 1920px;
-  height: auto;
+  height: 1080px;
 `;
 
 const Homepage = () => {
