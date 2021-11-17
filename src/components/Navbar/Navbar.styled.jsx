@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import helpers from "../helpers";
+import Icon from "../Icon/Icon.styled";
 import NavLogo from "../../assets/images/nav-brand.png";
 import House from "../../assets/icons/house.svg";
 import Search from "../../assets/icons/search.svg";
@@ -78,7 +80,7 @@ const StlyedUl = styled.ul`
 
 const StyledList = styled.li``;
 
-const Navbar = () => {
+const Navbar = ({ source }) => {
   return (
     <StyledNavbar>
       <Link to="/">
@@ -87,12 +89,12 @@ const Navbar = () => {
       <StlyedUl>
         <StyledList>
           <Link to="/">
-            <img src={House} alt="" />
+            <Icon src={source} source={House} alt="" />
           </Link>
         </StyledList>
         <StyledList>
           <Link to="/search">
-            <img src={Search} alt="" />
+            <Icon src={source} source={Search} alt="" />
           </Link>
         </StyledList>
         <StyledList>
@@ -101,12 +103,16 @@ const Navbar = () => {
             <img src={Star} alt="" />
           </Link> */}
           <a href="#">
-            <img src={Star} alt="" />
+            <Icon src={source} source={Star} alt="" />
           </a>
         </StyledList>
       </StlyedUl>
     </StyledNavbar>
   );
+};
+
+Navbar.propTypes = {
+  source: PropTypes.string.isRequired,
 };
 
 export default Navbar;
