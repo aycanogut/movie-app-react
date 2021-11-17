@@ -1,8 +1,9 @@
 import React, { useRef } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import Search from "../../assets/icons/search.svg";
 import helpers from "../helpers";
+import Icon from "../Icon/Icon.styled";
+import Search from "../../assets/icons/search.svg";
 
 const SearchBox = styled.section`
   display: flex;
@@ -10,7 +11,7 @@ const SearchBox = styled.section`
   justify-content: space-evenly;
   width: 70%;
   margin: 2rem auto;
-  padding: 1rem 1rem 1rem 2rem;
+  padding: 1rem 2rem;
   background-color: ${helpers.colors.body};
   border: 1px solid gray;
   border-radius: 3rem;
@@ -51,7 +52,7 @@ const StyledSubmit = styled.div`
   cursor: pointer;
 `;
 
-const SearchInput = ({ submitSearch }) => {
+const SearchInput = ({ source, submitSearch }) => {
   const inputRef = useRef(null);
 
   const handleSearch = (e) => {
@@ -76,13 +77,7 @@ const SearchInput = ({ submitSearch }) => {
           onKeyDown={(e) => onKeyDown(e)}
         />
         <StyledSubmit>
-          {/* <Search
-            size={24}
-            color="white"
-            style={{ marginRight: 12 }}
-            onClick={handleSearch}
-          /> */}
-          <img src={Search} alt="" />
+          <Icon src={source} source={Search} alt="" />
         </StyledSubmit>
       </SearchBox>
     </>
@@ -91,6 +86,7 @@ const SearchInput = ({ submitSearch }) => {
 
 SearchInput.propTypes = {
   submitSearch: PropTypes.func,
+  source: PropTypes.string,
 };
 
 export default SearchInput;
