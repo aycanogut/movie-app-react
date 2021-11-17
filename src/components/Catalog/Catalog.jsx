@@ -12,12 +12,15 @@ import SearchInput from "../SearchInput/SearchInput.styled";
 
 const StyledWrapper = styled.div`
   margin: 6rem auto 0 auto;
-  max-width: 1920px;
-  max-height: 1080px;
 
   @media only screen and ${helpers.device.lg} {
     margin: 0 auto;
   }
+`;
+
+const StyledImage = styled.img`
+  width: 1920px;
+  height: auto;
 `;
 
 const Catalog = () => {
@@ -42,7 +45,7 @@ const Catalog = () => {
       <Carousel>
         {popularMovies.map((movie, index) => (
           <SwiperSlide key={index}>
-            <img
+            <StyledImage
               src={api.images(movie.backdrop_path)}
               alt={`poster of ${movie.original_title} movie`}
             />
