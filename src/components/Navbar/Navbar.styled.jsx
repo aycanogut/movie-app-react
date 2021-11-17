@@ -3,7 +3,9 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import helpers from "../helpers";
 import NavLogo from "../../assets/images/nav-brand.png";
-import { House, Search, Star } from "react-bootstrap-icons";
+import House from "../../assets/icons/house.svg";
+import Search from "../../assets/icons/search.svg";
+import Star from "../../assets/icons/star.svg";
 
 const StyledNavbar = styled.nav`
   position: absolute;
@@ -85,21 +87,21 @@ const Navbar = () => {
       <StlyedUl>
         <StyledList>
           <Link to="/">
-            <House color="white" size={24} />
+            <img src={House} alt="" />
           </Link>
         </StyledList>
         <StyledList>
           <Link to="/search">
-            <Search color="white" size={24} />
+            <img src={Search} alt="" />
           </Link>
         </StyledList>
         <StyledList>
           {/* //todo activate this when we have a page for favorites */}
           {/* <Link to="/favourites">
-            <Star color="white" size={24} />
+            <img src={Star} alt="" />
           </Link> */}
           <a href="#">
-            <Star color="white" size={24} />
+            <img src={Star} alt="" />
           </a>
         </StyledList>
       </StlyedUl>

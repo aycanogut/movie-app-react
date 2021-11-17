@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import { CaretRight } from "react-bootstrap-icons";
+import CaretRight from "../../assets/icons/caret-right.svg";
 import helpers from "../helpers";
 import api from "../../api/api.js";
 import fallbackImage from "../../assets/images/fallback-card-image.png";
@@ -45,7 +45,8 @@ const CardContainer = ({ search }) => {
       <StyledHeader>
         <StyledTitleWrapper>
           <Title title={"Results"} />
-          <CaretRight color="white" size={24} />
+          {/* <CaretRight color="white" size={24} /> */}
+          <img src={CaretRight} style={{ color: "#fff" }} alt="" />
         </StyledTitleWrapper>
       </StyledHeader>
       <StyledCardContainer>

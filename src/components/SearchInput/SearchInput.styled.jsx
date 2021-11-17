@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import { Search } from "react-bootstrap-icons";
+import Search from "../../assets/icons/search.svg";
 import helpers from "../helpers";
 
 const SearchBox = styled.section`
@@ -76,12 +76,13 @@ const SearchInput = ({ submitSearch }) => {
           onKeyDown={(e) => onKeyDown(e)}
         />
         <StyledSubmit>
-          <Search
+          {/* <Search
             size={24}
             color="white"
             style={{ marginRight: 12 }}
             onClick={handleSearch}
-          />
+          /> */}
+          <img src={Search} alt="" />
         </StyledSubmit>
       </SearchBox>
     </>
