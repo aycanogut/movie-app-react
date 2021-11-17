@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import CaretRight from "../../assets/icons/caret-right.svg";
 import helpers from "../helpers";
 import api from "../../api/api.js";
 import fallbackImage from "../../assets/images/fallback-card-image.png";
@@ -33,21 +32,11 @@ const StyledHeader = styled.header`
   color: ${helpers.colors.text};
 `;
 
-const StyledTitleWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
 const CardContainer = ({ search }) => {
   return (
     <>
       <StyledHeader>
-        <StyledTitleWrapper>
-          <Title title={"Results"} />
-          {/* <CaretRight color="white" size={24} /> */}
-          <img src={CaretRight} style={{ color: "#fff" }} alt="" />
-        </StyledTitleWrapper>
+        <Title title={"Results"} />
       </StyledHeader>
       <StyledCardContainer>
         {search.map((item, index) => (
