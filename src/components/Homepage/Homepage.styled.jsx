@@ -25,7 +25,7 @@ const StyledWrapper = styled.div`
 
 const StyledImage = styled.img`
   width: 1920px;
-  height: 1080px;
+  height: auto;
 `;
 
 const Homepage = () => {
