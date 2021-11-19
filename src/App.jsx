@@ -1,5 +1,6 @@
-import Routing from "./components/Routing/Routing";
 import Normalize from "react-normalize";
+
+import Routing from "./components/Routing/Routing";
 import { GlobalStyles } from "./components/globalStyles";
 
 function App() {

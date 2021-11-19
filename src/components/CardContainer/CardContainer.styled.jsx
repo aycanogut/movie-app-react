@@ -1,9 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
+
 import api from "../../api/api.js";
 import helpers from "../helpers";
 import fallbackImage from "../../assets/images/fallback-card-image.png";
+
 import Title from "../Title/Title.styled";
 import Card from "../Card/Card.styled";
 

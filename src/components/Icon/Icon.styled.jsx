@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
+
 import helpers from "../helpers";
 
 const StyledIcon = styled.img`

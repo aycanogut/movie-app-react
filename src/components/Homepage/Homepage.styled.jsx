@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import { SwiperSlide } from "swiper/react";
+
 import useData, { url } from "../../hooks/useData";
 import api from "../../api/api.js";
 import helpers from "../helpers";
 import carouselBreakpoints from "../../helpers/carouselBreakpoints";
+
 import Navbar from "../Navbar/Navbar.styled";
 import Title from "../Title/Title.styled";
 import Card from "../Card/Card.styled";

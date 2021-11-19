@@ -1,7 +1,9 @@
 import React, { useRef } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
+
 import helpers from "../helpers";
+
 import Icon from "../Icon/Icon.styled";
 import Search from "../../assets/icons/search.svg";
 

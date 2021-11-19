@@ -1,9 +1,11 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import { SwiperSlide } from "swiper/react";
+
 import useData, { url } from "../../hooks/useData";
 import api from "../../api/api.js";
 import helpers from "../helpers";
+
 import CardContainer from "../CardContainer/CardContainer.styled";
 import Carousel from "../Carousel/Carousel";
 import Hero from "../Hero/Hero.styled";
