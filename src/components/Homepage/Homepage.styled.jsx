@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { SwiperSlide } from "swiper/react";
 
@@ -29,30 +29,25 @@ const StyledImage = styled.img`
 `;
 
 const Homepage = () => {
-  const {
-    popularMovies,
-    upcomingMovies,
-    popularSeries,
-    topRatedMovies,
-    topRatedSeries,
-    setPopularMovies,
-    setUpComingMovies,
-    setPopularSeries,
-    setTopRatedMovies,
-    setTopRatedSeries,
-    submitRequest,
-  } = useData();
+  const { submitRequest } = useData();
 
-  const fetchData = () => {
-    submitRequest(url.popularMovies(), setPopularMovies);
-    submitRequest(url.upcomingMovies(), setUpComingMovies);
-    submitRequest(url.popularSeries(), setPopularSeries);
-    submitRequest(url.topRatedMovies(), setTopRatedMovies);
-    submitRequest(url.topRatedSeries(), setTopRatedSeries);
+  const [popularMovies, setPopularMovies] = useState([]);
+  const [upcomingMovies, setUpcomingMovies] = useState([]);
+  const [popularSeries, setPopularSeries] = useState([]);
+  const [topRatedSeries, setTopRatedSeries] = useState([]);
+  const [topRatedMovies, setTopRatedMovies] = useState([]);
+
+  const fetchData = async (name, location, setState) => {
+    name = await submitRequest(location);
+    setState(name);
   };
 
   useEffect(() => {
-    fetchData();
+    fetchData(popularMovies, url.popularMovies(), setPopularMovies);
+    fetchData(upcomingMovies, url.upcomingMovies(), setUpcomingMovies);
+    fetchData(popularSeries, url.popularSeries(), setPopularSeries);
+    fetchData(topRatedSeries, url.topRatedSeries(), setTopRatedSeries);
+    fetchData(topRatedMovies, url.topRatedMovies(), setTopRatedMovies);
   }, []);
 
   return (
@@ -87,7 +82,6 @@ const Homepage = () => {
           </SwiperSlide>
         ))}
       </Carousel>
-
       <Title title={"Upcoming Movies"} />
       <Carousel breakpoints={carouselBreakpoints}>
         {upcomingMovies.map((movie, index) => (

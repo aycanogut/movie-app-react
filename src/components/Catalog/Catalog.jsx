@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { SwiperSlide } from "swiper/react";
 
@@ -26,20 +26,15 @@ const StyledImage = styled.img`
 `;
 
 const Catalog = () => {
-  const { submitRequest } = useData();
+  const { popularMovies, setPopularMovies, search, setSearch, submitRequest } =
+    useData();
 
-  const [heroImage, setHeroImage] = useState([]);
-  const [cardContainer, setCardContainer] = useState([]);
-
-  const submitSearch = async (value) => {
-    const search = await submitRequest(url.search(value));
-    setCardContainer(search);
+  const submitSearch = (search) => {
+    submitRequest(url.search(search), setSearch);
   };
 
-  const fetchMovies = async () => {
-    const popularMovies = await submitRequest(url.popularMovies());
-    setCardContainer(popularMovies);
-    setHeroImage(popularMovies);
+  const fetchMovies = () => {
+    submitRequest(url.popularMovies(), setPopularMovies);
   };
 
   useEffect(() => {
@@ -50,7 +45,7 @@ const Catalog = () => {
     <StyledWrapper>
       <Navbar />
       <Carousel>
-        {heroImage.map((movie, index) => (
+        {popularMovies.map((movie, index) => (
           <SwiperSlide key={index}>
             <StyledImage
               src={api.images(movie.backdrop_path)}
@@ -64,7 +59,7 @@ const Catalog = () => {
         ))}
       </Carousel>
       <SearchInput submitSearch={submitSearch} />
-      <CardContainer cardContainer={cardContainer} />
+      <CardContainer search={search} />
     </StyledWrapper>
   );
 };
