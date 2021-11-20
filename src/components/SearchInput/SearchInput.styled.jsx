@@ -34,7 +34,7 @@ const SearchBox = styled.section`
 
 const StyledInput = styled.input`
   width: 100%;
-  font-size: 12px;
+  font-size: 1.2rem;
   background-color: ${helpers.colors.body};
   border: none;
 
