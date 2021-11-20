@@ -97,7 +97,7 @@ const Card = ({ image, title, rating, info }) => {
 
 Card.propTypes = {
   image: PropTypes.string,
-  title: PropTypes.number,
+  title: PropTypes.string,
   rating: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   info: PropTypes.string,
 };
