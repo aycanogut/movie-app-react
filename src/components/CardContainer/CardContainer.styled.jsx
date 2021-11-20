@@ -41,14 +41,14 @@ const StyledHeader = styled.header`
   color: ${helpers.colors.text};
 `;
 
-const CardContainer = ({ search }) => {
+const CardContainer = ({ cardContainer }) => {
   return (
     <>
       <StyledHeader>
         <Title title={"Results"} />
       </StyledHeader>
       <StyledCardContainer>
-        {search.map((item, index) => (
+        {cardContainer.map((item, index) => (
           <Card
             key={index}
             image={
@@ -84,7 +84,7 @@ const CardContainer = ({ search }) => {
 };
 
 CardContainer.propTypes = {
-  search: PropTypes.array,
+  cardContainer: PropTypes.array,
 };
 
 export default CardContainer;
