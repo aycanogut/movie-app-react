@@ -1,4 +1,3 @@
-import { useState } from "react";
 import axios from "axios";
 
 import api from "../api/api.js";
@@ -21,15 +20,8 @@ export const url = {
 
 // custom hook for fetch data from api
 const useData = () => {
-  const [popularMovies, setPopularMovies] = useState([]);
-  const [upcomingMovies, setUpComingMovies] = useState([]);
-  const [topRatedMovies, setTopRatedMovies] = useState([]);
-  const [popularSeries, setPopularSeries] = useState([]);
-  const [topRatedSeries, setTopRatedSeries] = useState([]);
-  const [search, setSearch] = useState([]);
-
   // this function is using in the homepage and catalog pages for fetching data from api
-  const submitRequest = async (link, setState) => {
+  const submitRequest = async (link) => {
     const { data } = await axios(link);
     const { results } = data;
 
@@ -38,22 +30,10 @@ const useData = () => {
       return;
     }
 
-    setState(results);
+    return results;
   };
 
   return {
-    popularMovies,
-    upcomingMovies,
-    popularSeries,
-    topRatedMovies,
-    topRatedSeries,
-    search,
-    setPopularMovies,
-    setUpComingMovies,
-    setPopularSeries,
-    setTopRatedMovies,
-    setTopRatedSeries,
-    setSearch,
     submitRequest,
   };
 };
