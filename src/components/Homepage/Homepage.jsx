@@ -4,6 +4,8 @@ import styled from "styled-components";
 import { SwiperSlide } from "swiper/react";
 
 import useData, { url } from "../../hooks/useData";
+import useFavorites from "../../hooks/useFavorites";
+import useLocalStorage from "../../hooks/useLocalStorage";
 import api from "../../api/api.js";
 import helpers from "../helpers";
 import carouselBreakpoints from "../../helpers/carouselBreakpoints";
@@ -31,6 +33,8 @@ const StyledImage = styled.img`
 
 const Homepage = () => {
   const { submitRequest } = useData();
+  const { favorites, addFavorite, removeFavorite } = useFavorites();
+  const [localFavorites, setLocalFavorites] = useLocalStorage("favorites", []);
 
   const [popularMovies, setPopularMovies] = useState([]);
   const [upcomingMovies, setUpcomingMovies] = useState([]);
@@ -49,7 +53,10 @@ const Homepage = () => {
     fetchData(popularSeries, url.popularSeries(), setPopularSeries);
     fetchData(topRatedSeries, url.topRatedSeries(), setTopRatedSeries);
     fetchData(topRatedMovies, url.topRatedMovies(), setTopRatedMovies);
-  }, []);
+    console.log(favorites);
+
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+  }, [favorites]);
 
   return (
     <StyledWrapper>
@@ -74,6 +81,16 @@ const Homepage = () => {
       <Carousel breakpoints={carouselBreakpoints}>
         {popularMovies.map((movie, index) => (
           <SwiperSlide key={index}>
+            <h1 style={{ color: "red" }} onClick={() => addFavorite(movie)}>
+              PRESS ADD PLEASE YO!
+            </h1>
+            <h1
+              style={{ color: "white" }}
+              onClick={() => removeFavorite(movie)}
+            >
+              PRESS EMOVEEASE YO!
+            </h1>
+
             <Card
               image={api.w500images(movie.poster_path)}
               title={movie.original_title}
