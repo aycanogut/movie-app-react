@@ -2,16 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
+import useFavorites from "../../hooks/useFavorites";
 import helpers from "../helpers";
 
 const StyledWrapper = styled.div`
   position: relative;
   transition: 0.3s ease-in-out;
   overflow: hidden;
-
-  img {
-    grid-area: 1 / 2;
-  }
 
   .overflow {
   }
@@ -29,7 +26,6 @@ const StyledCardOverflow = styled.div`
   overflow: auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   transform: translateY(100%);
   transition: 0.3s ease-in-out;
   background-color: rgba(0, 0, 0, 0.8);
@@ -69,6 +65,12 @@ const StyledTitle = styled.header`
   } ;
 `;
 
+const StyledBottom = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin: auto 0 0 0;
+`;
+
 const StyledRating = styled.span`
   font-size: 2.4rem;
   color: ${helpers.colors.textBadge};
@@ -83,12 +85,17 @@ const StyledRating = styled.span`
 `;
 
 const Card = ({ image, title, rating, info }) => {
+  const { favorites, addFavorite, removeFavorite } = useFavorites();
+
   return (
     <StyledWrapper>
       <StyledCardOverflow className="overflow">
-        <StyledRating>{rating}</StyledRating>
-        <StyledCardInfo>{info}</StyledCardInfo>
         <StyledTitle>{title}</StyledTitle>
+        <StyledCardInfo>{info}</StyledCardInfo>
+        <StyledBottom>
+          <StyledRating>{rating}</StyledRating>
+          <h1 onClick={() => addFavorite}>Add to favorites</h1>
+        </StyledBottom>
       </StyledCardOverflow>
       <img src={image} />
     </StyledWrapper>
