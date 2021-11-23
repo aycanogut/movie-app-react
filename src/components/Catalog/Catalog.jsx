@@ -6,11 +6,12 @@ import useData, { url } from "../../hooks/useData";
 import api from "../../api/api.js";
 import helpers from "../helpers";
 
-import CardContainer from "../CardContainer/CardContainer.styled";
-import Carousel from "../Carousel/Carousel";
-import Hero from "../Hero/Hero.styled";
 import Navbar from "../Navbar/Navbar.styled";
+import Hero from "../Hero/Hero.styled";
 import SearchInput from "../SearchInput/SearchInput.styled";
+import Carousel from "../Carousel/Carousel";
+import Title from "../Title/Title.styled";
+import CardContainer from "../CardContainer/CardContainer.styled";
 
 const StyledWrapper = styled.div`
   margin: 6rem auto 0 auto;
@@ -18,6 +19,13 @@ const StyledWrapper = styled.div`
   @media only screen and ${helpers.device.lg} {
     margin: 0 auto;
   }
+`;
+
+const StyledHeader = styled.header`
+  display: flex;
+  align-content: center;
+  margin: 1rem;
+  color: ${helpers.colors.text};
 `;
 
 const StyledImage = styled.img`
@@ -64,6 +72,9 @@ const Catalog = () => {
         ))}
       </Carousel>
       <SearchInput submitSearch={submitSearch} />
+      <StyledHeader>
+        <Title title={"Results"} />
+      </StyledHeader>
       <CardContainer cardContainer={cardContainer} />
     </StyledWrapper>
   );
