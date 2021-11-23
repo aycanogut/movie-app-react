@@ -101,13 +101,9 @@ const Navbar = ({ source }) => {
           </Link>
         </StyledList>
         <StyledList>
-          {/* //todo activate this when we have a page for favorites */}
-          {/* <Link to="/favourites">
-            <img src={Star} alt="" />
-          </Link> */}
-          <a href="#">
+          <Link to="/favorites">
             <Icon src={source} source={Star} alt="" />
-          </a>
+          </Link>
         </StyledList>
       </StlyedUl>
     </StyledNavbar>
