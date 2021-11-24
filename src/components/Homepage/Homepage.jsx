@@ -14,8 +14,7 @@ import Title from "../Title/Title.styled";
 import Card from "../Card/Card.styled";
 import Carousel from "../Carousel/Carousel";
 import Hero from "../Hero/Hero.styled";
-import AddFavorite from "../AddFavorite/AddFavorite";
-import RemoveFavorite from "../RemoveFavorite/RemoveFavorite";
+import Button from "../Button/Button.styled";
 
 const StyledWrapper = styled.div`
   margin: 6rem auto 0 auto;
@@ -34,6 +33,8 @@ const StyledImage = styled.img`
 
 const StyledFavorites = styled.div`
   display: flex;
+  justify-content: space-evenly;
+  margin: 1rem 0;
 `;
 
 const Homepage = () => {
@@ -101,8 +102,14 @@ const Homepage = () => {
               item={movie}
             />
             <StyledFavorites>
-              <AddFavorite onClick={() => addFavorite(movie)} />
-              <RemoveFavorite onClick={() => removeFavorite(movie)} />
+              <Button
+                title="Add to Favorites"
+                onClick={() => addFavorite(movie)}
+              />
+              <Button
+                title="Remove from Favorites"
+                onClick={() => removeFavorite(movie)}
+              />
             </StyledFavorites>
           </SwiperSlide>
         ))}
@@ -117,6 +124,16 @@ const Homepage = () => {
               rating={movie.vote_average}
               info={movie.overview.substring(0, 180).concat("...")}
             />
+            <StyledFavorites>
+              <Button
+                title="Add to Favorites"
+                onClick={() => addFavorite(movie)}
+              />
+              <Button
+                title="Remove from Favorites"
+                onClick={() => removeFavorite(movie)}
+              />
+            </StyledFavorites>
           </SwiperSlide>
         ))}
       </Carousel>
@@ -131,6 +148,16 @@ const Homepage = () => {
               rating={tv.vote_average}
               info={tv.overview.substring(0, 180).concat("...")}
             />
+            <StyledFavorites>
+              <Button
+                title="Add to Favorites"
+                onClick={() => addFavorite(tv)}
+              />
+              <Button
+                title="Remove from Favorites"
+                onClick={() => removeFavorite(tv)}
+              />
+            </StyledFavorites>
           </SwiperSlide>
         ))}
       </Carousel>
@@ -145,6 +172,16 @@ const Homepage = () => {
               rating={movie.vote_average}
               info={movie.overview.substring(0, 180).concat("...")}
             />
+            <StyledFavorites>
+              <Button
+                title="Add to Favorites"
+                onClick={() => addFavorite(movie)}
+              />
+              <Button
+                title="Remove from Favorites"
+                onClick={() => removeFavorite(movie)}
+              />
+            </StyledFavorites>
           </SwiperSlide>
         ))}
       </Carousel>
@@ -159,6 +196,16 @@ const Homepage = () => {
               rating={movie.vote_average}
               info={movie.overview.substring(0, 180).concat("...")}
             />
+            <StyledFavorites>
+              <Button
+                title="Add to Favorites"
+                onClick={() => addFavorite(movie)}
+              />
+              <Button
+                title="Remove from Favorites"
+                onClick={() => removeFavorite(movie)}
+              />
+            </StyledFavorites>
           </SwiperSlide>
         ))}
       </Carousel>
