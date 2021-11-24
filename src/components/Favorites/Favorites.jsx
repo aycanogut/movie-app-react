@@ -29,7 +29,7 @@ const StyledImage = styled.img`
 const Favorites = () => {
   const { submitRequest } = useData();
 
-  const { favorites, addFavorite, removeFavorite } = useFavorites();
+  const { favorites, setFavorites } = useFavorites();
   const [heroImage, setHeroImage] = useState([]);
 
   const fetchData = async (name, location, setState) => {
@@ -38,7 +38,17 @@ const Favorites = () => {
   };
 
   useEffect(() => {
+    const localFavorites = localStorage.getItem("favorites");
+    const parsedFavorites = JSON.parse(localFavorites);
+
+    parsedFavorites ? setFavorites(parsedFavorites) : setFavorites([]);
+  }, []);
+
+  useEffect(() => {
     fetchData(heroImage, url.popularMovies(), setHeroImage);
+
+    const localFavorites = JSON.stringify(favorites);
+    localStorage.setItem("favorites", localFavorites);
   }, [favorites]);
 
   return (
@@ -59,7 +69,7 @@ const Favorites = () => {
         ))}
       </Carousel>
       <Title title={"Favorites"} />
-      <CardContainer cardContainer={heroImage} />
+      <CardContainer cardContainer={favorites} />
     </StyledWrapper>
   );
 };

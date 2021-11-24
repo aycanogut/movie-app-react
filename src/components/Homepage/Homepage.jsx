@@ -33,8 +33,7 @@ const StyledImage = styled.img`
 
 const Homepage = () => {
   const { submitRequest } = useData();
-  const { favorites, addFavorite, removeFavorite } = useFavorites();
-  const [localFavorites, setLocalFavorites] = useLocalStorage("favorites", []);
+  const { favorites, setFavorites } = useFavorites();
 
   const [popularMovies, setPopularMovies] = useState([]);
   const [upcomingMovies, setUpcomingMovies] = useState([]);
@@ -48,14 +47,21 @@ const Homepage = () => {
   };
 
   useEffect(() => {
+    const localFavorites = localStorage.getItem("favorites");
+    const parsedFavorites = JSON.parse(localFavorites);
+
+    parsedFavorites ? setFavorites(parsedFavorites) : setFavorites([]);
+  }, []);
+
+  useEffect(() => {
     fetchData(popularMovies, url.popularMovies(), setPopularMovies);
     fetchData(upcomingMovies, url.upcomingMovies(), setUpcomingMovies);
     fetchData(popularSeries, url.popularSeries(), setPopularSeries);
     fetchData(topRatedSeries, url.topRatedSeries(), setTopRatedSeries);
     fetchData(topRatedMovies, url.topRatedMovies(), setTopRatedMovies);
-    console.log(favorites);
 
-    localStorage.setItem("favorites", JSON.stringify(favorites));
+    const localFavorites = JSON.stringify(favorites);
+    localStorage.setItem("favorites", localFavorites);
   }, [favorites]);
 
   return (
@@ -81,16 +87,6 @@ const Homepage = () => {
       <Carousel breakpoints={carouselBreakpoints}>
         {popularMovies.map((movie, index) => (
           <SwiperSlide key={index}>
-            <h1 style={{ color: "red" }} onClick={() => addFavorite(movie)}>
-              PRESS ADD PLEASE YO!
-            </h1>
-            <h1
-              style={{ color: "white" }}
-              onClick={() => removeFavorite(movie)}
-            >
-              PRESS EMOVEEASE YO!
-            </h1>
-
             <Card
               image={api.w500images(movie.poster_path)}
               title={movie.original_title}
