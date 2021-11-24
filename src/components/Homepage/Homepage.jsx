@@ -32,6 +32,10 @@ const StyledImage = styled.img`
   height: auto;
 `;
 
+const StyledFavorites = styled.div`
+  display: flex;
+`;
+
 const Homepage = () => {
   const { submitRequest } = useData();
   const { favorites, setFavorites, addFavorite, removeFavorite } =
@@ -94,8 +98,12 @@ const Homepage = () => {
               title={movie.original_title}
               rating={movie.vote_average}
               info={movie.overview.substring(0, 180).concat("...")}
-              // item={movie}
+              item={movie}
             />
+            <StyledFavorites>
+              <AddFavorite onClick={() => addFavorite(movie)} />
+              <RemoveFavorite onClick={() => removeFavorite(movie)} />
+            </StyledFavorites>
           </SwiperSlide>
         ))}
       </Carousel>
