@@ -33,7 +33,7 @@ const StyledImage = styled.img`
   height: auto;
 `;
 
-const Catalog = () => {
+const Search = () => {
   const { submitRequest } = useData();
 
   const [heroImage, setHeroImage] = useState([]);
@@ -80,4 +80,4 @@ const Catalog = () => {
   );
 };
 
-export default Catalog;
+export default Search;

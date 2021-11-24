@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Loader from "../Loader/Loader";
 
 const Homepage = lazy(() => import("../Homepage/Homepage"));
-const Catalog = lazy(() => import("../Catalog/Catalog"));
+const Search = lazy(() => import("../Search/Search"));
 const Favorites = lazy(() => import("../Favorites/Favorites"));
 
 function Routing() {
@@ -13,7 +13,7 @@ function Routing() {
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/search" element={<Catalog />} />
+          <Route path="/search" element={<Search />} />
           <Route path="/favorites" element={<Favorites />} />
         </Routes>
       </Suspense>

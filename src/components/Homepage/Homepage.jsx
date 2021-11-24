@@ -14,6 +14,8 @@ import Title from "../Title/Title.styled";
 import Card from "../Card/Card.styled";
 import Carousel from "../Carousel/Carousel";
 import Hero from "../Hero/Hero.styled";
+import AddFavorite from "../AddFavorite/AddFavorite";
+import RemoveFavorite from "../RemoveFavorite/RemoveFavorite";
 
 const StyledWrapper = styled.div`
   margin: 6rem auto 0 auto;
@@ -32,7 +34,8 @@ const StyledImage = styled.img`
 
 const Homepage = () => {
   const { submitRequest } = useData();
-  const { favorites, setFavorites } = useFavorites();
+  const { favorites, setFavorites, addFavorite, removeFavorite } =
+    useFavorites();
 
   const [popularMovies, setPopularMovies] = useState([]);
   const [upcomingMovies, setUpcomingMovies] = useState([]);
@@ -91,6 +94,7 @@ const Homepage = () => {
               title={movie.original_title}
               rating={movie.vote_average}
               info={movie.overview.substring(0, 180).concat("...")}
+              // item={movie}
             />
           </SwiperSlide>
         ))}
