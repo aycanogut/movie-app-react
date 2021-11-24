@@ -1,40 +1,48 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-import useFavorites from "../../hooks/useFavorites";
 import helpers from "../helpers";
 
 import RemoveFavoriteIcon from "../../assets/icons/delete.svg";
 
+const StyledRemoveFavorite = styled.div`
+  /* css */
+`;
+
 const StyledIcon = styled.img`
-  position: absolute;
+  /* position: absolute; */
   top: 1rem;
-  right: 0.6rem;
+  right: 4rem;
   width: 2.4rem;
   height: auto;
 
   @media only screen and ${helpers.device.md} {
     top: 2rem;
-    right: 1rem;
+    right: 6rem;
     width: 3.6rem;
   }
 
   @media only screen and ${helpers.device.lg} {
-    right: 1.2rem;
+    right: 7rem;
     width: 4.8rem;
   }
 `;
 
-const RemoveFavorite = ({ item }) => {
-  const { removeFavorite } = useFavorites();
+const StyledText = styled.span`
+  /* css */
+`;
 
+const RemoveFavorite = ({ onClick }) => {
   return (
-    <StyledIcon src={RemoveFavoriteIcon} onClick={() => removeFavorite(item)} />
+    <StyledRemoveFavorite onClick={onClick}>
+      <StyledIcon src={RemoveFavoriteIcon} />
+      <StyledText>Add to Favorites</StyledText>
+    </StyledRemoveFavorite>
   );
 };
 
 RemoveFavorite.propTypes = {
-  item: PropTypes.object,
+  onClick: PropTypes.func,
 };
 
 export default RemoveFavorite;

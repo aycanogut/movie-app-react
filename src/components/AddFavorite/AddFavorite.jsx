@@ -1,13 +1,16 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-import useFavorites from "../../hooks/useFavorites";
 import helpers from "../helpers";
 
 import AddFavoriteIcon from "../../assets/icons/star-solid.svg";
 
+const StyledAddFavorite = styled.div`
+  /* css */
+`;
+
 const StyledIcon = styled.img`
-  position: absolute;
+  /* position: absolute; */
   top: 1rem;
   right: 4rem;
   width: 2.4rem;
@@ -25,14 +28,21 @@ const StyledIcon = styled.img`
   }
 `;
 
-const AddFavorite = ({ item }) => {
-  const { addFavorite } = useFavorites();
+const StyledText = styled.span`
+  /* css */
+`;
 
-  return <StyledIcon src={AddFavoriteIcon} onClick={() => addFavorite(item)} />;
+const AddFavorite = ({ onClick }) => {
+  return (
+    <StyledAddFavorite onClick={onClick}>
+      <StyledIcon src={AddFavoriteIcon} />
+      <StyledText>Add to Favorites</StyledText>
+    </StyledAddFavorite>
+  );
 };
 
 AddFavorite.propTypes = {
-  item: PropTypes.object,
+  onClick: PropTypes.func,
 };
 
 export default AddFavorite;
