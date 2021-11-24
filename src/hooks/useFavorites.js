@@ -14,6 +14,7 @@ const useFavorites = () => {
   return {
     favorites,
     addFavorite,
+    setFavorites,
     removeFavorite,
   };
 };
