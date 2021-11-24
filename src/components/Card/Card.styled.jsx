@@ -1,8 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-import useFavorites from "../../hooks/useFavorites";
 import helpers from "../helpers";
 
 const StyledWrapper = styled.div`
@@ -12,6 +10,7 @@ const StyledWrapper = styled.div`
 
   .overflow {
   }
+
   /* hover effect for movie details */
   &:hover .overflow {
     transition: 0.3s ease-in-out;
@@ -72,6 +71,7 @@ const StyledBottom = styled.div`
 `;
 
 const StyledRating = styled.span`
+  margin: 0 0 0 auto;
   font-size: 2.4rem;
   color: ${helpers.colors.textBadge};
 
@@ -85,17 +85,13 @@ const StyledRating = styled.span`
 `;
 
 const Card = ({ image, title, rating, info }) => {
-  const { favorites, addFavorite, removeFavorite } = useFavorites();
-
   return (
     <StyledWrapper>
       <StyledCardOverflow className="overflow">
+        <StyledRating>{rating}</StyledRating>
         <StyledTitle>{title}</StyledTitle>
         <StyledCardInfo>{info}</StyledCardInfo>
-        <StyledBottom>
-          <StyledRating>{rating}</StyledRating>
-          <h1 onClick={() => addFavorite}>Add to favorites</h1>
-        </StyledBottom>
+        <StyledBottom></StyledBottom>
       </StyledCardOverflow>
       <img src={image} />
     </StyledWrapper>
