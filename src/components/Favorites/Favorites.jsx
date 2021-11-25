@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { SwiperSlide } from "swiper/react";
 
-import useFavorites from "../../hooks/useFavorites";
 import useData, { url } from "../../hooks/useData";
+import useFavorites from "../../hooks/useFavorites";
 import api from "../../api/api.js";
 import helpers from "../helpers";
 
@@ -15,6 +15,8 @@ import Title from "../Title/Title.styled";
 
 const StyledWrapper = styled.div`
   margin: 6rem auto 0 auto;
+  max-width: 1920px;
+  max-height: 1080px;
 
   @media only screen and ${helpers.device.lg} {
     margin: 0 auto;
@@ -38,17 +40,14 @@ const Favorites = () => {
   };
 
   useEffect(() => {
+    fetchData(heroImage, url.popularMovies(), setHeroImage);
+
     const localFavorites = localStorage.getItem("favorites");
     const parsedFavorites = JSON.parse(localFavorites);
 
-    parsedFavorites ? setFavorites(parsedFavorites) : setFavorites([]);
-  }, []);
-
-  useEffect(() => {
-    fetchData(heroImage, url.popularMovies(), setHeroImage);
-
-    const localFavorites = JSON.stringify(favorites);
-    localStorage.setItem("favorites", localFavorites);
+    if (parsedFavorites) {
+      setFavorites(parsedFavorites);
+    }
   }, [favorites]);
 
   return (
