@@ -20,6 +20,10 @@ img {
     max-width: 100%;
 }
 
+a, a:-webkit-any-link {
+  text-decoration: none 
+}
+
 #root, .App {
   height: 100%;
 }
