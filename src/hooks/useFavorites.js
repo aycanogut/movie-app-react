@@ -4,11 +4,20 @@ const useFavorites = () => {
   const [favorites, setFavorites] = useState([]);
 
   const addFavorite = (favorite) => {
-    setFavorites([...favorites, favorite]);
+    const existingFavorite = favorites.find(
+      (favoriteItem) => favoriteItem.id === favorite.id
+    );
+
+    if (!existingFavorite) {
+      setFavorites((prevFavorites) => [...prevFavorites, favorite]);
+    }
   };
 
   const removeFavorite = (favorite) => {
-    setFavorites(favorites.filter((f) => f.id !== favorite.id));
+    const filteredFavorites = favorites.filter(
+      (favoriteItem) => favoriteItem.id !== favorite.id
+    );
+    setFavorites(filteredFavorites);
   };
 
   return {
