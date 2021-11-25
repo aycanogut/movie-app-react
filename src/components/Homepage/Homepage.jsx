@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import styled from "styled-components";
 import { SwiperSlide } from "swiper/react";
@@ -57,7 +57,9 @@ const Homepage = () => {
     const localFavorites = localStorage.getItem("favorites");
     const parsedFavorites = JSON.parse(localFavorites);
 
-    parsedFavorites ? setFavorites(parsedFavorites) : setFavorites([]);
+    if (parsedFavorites) {
+      setFavorites(parsedFavorites);
+    }
   }, []);
 
   useEffect(() => {
