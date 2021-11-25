@@ -37,22 +37,18 @@ const useFavorites = () => {
   };
 
   const removeFavorite = (favorite) => {
-    const filteredFavorites = favorites.filter((favoriteItem) => {
-      favoriteItem.id !== favorite.id;
+    setFavorites(favorites.filter((f) => f.id !== favorite.id));
 
-      toast.error("Item removed from the watchlist!", {
-        position: "bottom-center",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        className: "toaster",
-      });
+    toast.error("Item removed from the watchlist!", {
+      position: "bottom-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      className: "toaster",
     });
-
-    setFavorites(filteredFavorites);
   };
 
   return {
