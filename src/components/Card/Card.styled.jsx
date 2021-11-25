@@ -36,19 +36,6 @@ const StyledCardOverflow = styled.div`
   }
 `;
 
-const StyledCardInfo = styled.p`
-  font-size: 1.2rem;
-  color: ${helpers.colors.text};
-
-  @media only screen and ${helpers.device.md} {
-    font-size: 1.6rem;
-  }
-
-  @media only screen and ${helpers.device.lg} {
-    font-size: 2rem;
-  } ;
-`;
-
 const StyledTitle = styled.header`
   font-size: 1.6rem;
   margin: 1rem 0;
@@ -61,7 +48,25 @@ const StyledTitle = styled.header`
 
   @media only screen and ${helpers.device.lg} {
     margin: 2rem 0;
-    font-size: 2.4rem;
+    padding-block: 1rem;
+    text-align: center;
+    font-size: 2.8rem;
+  } ;
+`;
+
+const StyledCardInfo = styled.p`
+  overflow: hidden;
+  font-size: 1.2rem;
+  color: ${helpers.colors.text};
+
+  @media only screen and ${helpers.device.md} {
+    font-size: 1.6rem;
+  }
+
+  @media only screen and ${helpers.device.lg} {
+    padding-block: 2rem;
+    text-align: justify;
+    font-size: 2rem;
   } ;
 `;
 
@@ -75,6 +80,7 @@ const StyledRating = styled.span`
   }
 
   @media only screen and ${helpers.device.md} {
+    margin: auto auto 0 auto;
     font-size: 3.2rem;
   } ;
 `;
