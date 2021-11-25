@@ -41,4 +41,17 @@ img {
   }
 }
 
+.toaster {
+
+  background-color: ${helpers.colors.body};
+
+  @media only screen and ${helpers.device.md} {
+    font-size: 1.4rem;
+} ;
+@media only screen and ${helpers.device.lg} {
+  font-size: 1.8rem;
+} ;
+
+}
+
 `;
