@@ -12,6 +12,7 @@ import SearchInput from "../SearchInput/SearchInput.styled";
 import Carousel from "../Carousel/Carousel";
 import Title from "../Title/Title.styled";
 import CardContainer from "../CardContainer/CardContainer.styled";
+import Footer from "../Footer/Footer.styled";
 
 const StyledWrapper = styled.div`
   margin: 6rem auto 0 auto;
@@ -79,6 +80,7 @@ const Search = () => {
         <Title title={"Results"} />
       </StyledHeader>
       <CardContainer cardContainer={cardContainer} />
+      <Footer />
     </StyledWrapper>
   );
 };

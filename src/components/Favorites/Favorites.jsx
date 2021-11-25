@@ -12,6 +12,7 @@ import Hero from "../Hero/Hero.styled";
 import Carousel from "../Carousel/Carousel";
 import CardContainer from "../CardContainer/CardContainer.styled";
 import Title from "../Title/Title.styled";
+import Footer from "../Footer/Footer.styled";
 
 const StyledWrapper = styled.div`
   margin: 6rem auto 0 auto;
@@ -71,6 +72,7 @@ const Favorites = () => {
       </Carousel>
       <Title title={"Favorites"} />
       <CardContainer cardContainer={favorites} />
+      <Footer />
     </StyledWrapper>
   );
 };

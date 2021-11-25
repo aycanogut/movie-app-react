@@ -15,6 +15,7 @@ import Card from "../Card/Card.styled";
 import Carousel from "../Carousel/Carousel";
 import Hero from "../Hero/Hero.styled";
 import Button from "../Button/Button.styled";
+import Footer from "../Footer/Footer.styled";
 
 const StyledWrapper = styled.div`
   margin: 6rem auto 0 auto;
@@ -211,6 +212,7 @@ const Homepage = () => {
           </SwiperSlide>
         ))}
       </Carousel>
+      <Footer />
     </StyledWrapper>
   );
 };
