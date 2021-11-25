@@ -15,6 +15,8 @@ import CardContainer from "../CardContainer/CardContainer.styled";
 
 const StyledWrapper = styled.div`
   margin: 6rem auto 0 auto;
+  max-width: 1920px;
+  max-height: 1080px;
 
   @media only screen and ${helpers.device.lg} {
     margin: 0 auto;
@@ -46,8 +48,9 @@ const Search = () => {
 
   const fetchMovies = async () => {
     const popularMovies = await submitRequest(url.popularMovies());
-    setCardContainer(popularMovies);
+
     setHeroImage(popularMovies);
+    setCardContainer(popularMovies);
   };
 
   useEffect(() => {
