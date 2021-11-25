@@ -8,9 +8,6 @@ const StyledWrapper = styled.div`
   transition: 0.3s ease-in-out;
   overflow: hidden;
 
-  .overflow {
-  }
-
   /* hover effect for movie details */
   &:hover .overflow {
     transition: 0.3s ease-in-out;
@@ -32,7 +29,11 @@ const StyledCardOverflow = styled.div`
 
   @media only screen and ${helpers.device.md} {
     padding: 2rem;
-  } ;
+  }
+
+  @media only screen and ${helpers.device.lg} {
+    padding: 3rem;
+  }
 `;
 
 const StyledCardInfo = styled.p`
@@ -44,7 +45,7 @@ const StyledCardInfo = styled.p`
   }
 
   @media only screen and ${helpers.device.lg} {
-    font-size: 1.6rem;
+    font-size: 2rem;
   } ;
 `;
 
@@ -64,14 +65,8 @@ const StyledTitle = styled.header`
   } ;
 `;
 
-const StyledBottom = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin: auto 0 0 0;
-`;
-
 const StyledRating = styled.span`
-  margin: 0 0 0 auto;
+  margin: auto 0 0 0;
   font-size: 2.4rem;
   color: ${helpers.colors.textBadge};
 
@@ -88,10 +83,9 @@ const Card = ({ image, title, rating, info }) => {
   return (
     <StyledWrapper>
       <StyledCardOverflow className="overflow">
-        <StyledRating>{rating}</StyledRating>
         <StyledTitle>{title}</StyledTitle>
         <StyledCardInfo>{info}</StyledCardInfo>
-        <StyledBottom></StyledBottom>
+        <StyledRating>{rating}</StyledRating>
       </StyledCardOverflow>
       <img src={image} />
     </StyledWrapper>
