@@ -7,7 +7,7 @@ const StyledButton = styled.button`
   transition: 0.3s ease-in-out;
   padding: 0;
   margin: 0;
-  font-size: 0.8rem;
+  font-size: 1rem;
   background-color: transparent;
   color: ${helpers.colors.text};
   border: 1px solid ${helpers.colors.text};
@@ -19,18 +19,10 @@ const StyledButton = styled.button`
     color: #ffcc11;
   }
 
-  @media only screen and ${helpers.device.sm} {
-    font-size: 1rem;
-  }
-
   @media only screen and ${helpers.device.md} {
-    font-size: 1.3rem;
-  }
-
-  @media only screen and ${helpers.device.lg} {
     font-size: 1.6rem;
-    padding: 0.4rem;
-  } ;
+    padding: 0.6rem;
+  }
 `;
 
 const Button = ({ onClick, title }) => {
