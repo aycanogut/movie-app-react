@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { SwiperSlide } from "swiper/react";
 
@@ -41,7 +41,9 @@ const Favorites = () => {
 
   useEffect(() => {
     fetchData(heroImage, url.popularMovies(), setHeroImage);
+  }, []);
 
+  useEffect(() => {
     const localFavorites = localStorage.getItem("favorites");
     const parsedFavorites = JSON.parse(localFavorites);
 
