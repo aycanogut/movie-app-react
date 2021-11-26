@@ -33,18 +33,10 @@ Users can search for movies and television shows, add them to their watchlists, 
 ## Installation
 
 ```
-npm install
-```
-
-```
 yarn install
 ```
 
 ## Starting project
-
-```
-npm start dev
-```
 
 ```
 yarn dev

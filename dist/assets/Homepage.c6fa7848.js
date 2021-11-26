@@ -1,0 +1,16 @@
+import{s as f,r as o,b as a,j as t}from"./vendor.3e792043.js";import{u as V,N as A,C as r,S as l,a as n,H as N,T as g,b as h,B as s,F as H,c as v,d as I}from"./Footer.styled.d01c0005.js";import{h as B}from"./index.62363ac6.js";const u={320:{width:160,slidesPerView:1},465:{width:320,slidesPerView:2},640:{width:500,slidesPerView:2},768:{width:700,slidesPerView:3},992:{width:992,slidesPerView:3}},D=f.div`
+  margin: 6rem auto 0 auto;
+  max-width: 1920px;
+  max-height: 1080px;
+
+  @media only screen and ${B.device.lg} {
+    margin: 0 auto;
+  }
+`,E=f.img`
+  width: 1920px;
+  height: auto;
+`,m=f.div`
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1rem 0;
+`,$=()=>{const{submitRequest:k}=I(),{favorites:S,setFavorites:R,addFavorite:c,removeFavorite:d}=V(),[w,C]=o.exports.useState([]),[F,y]=o.exports.useState([]),[x,M]=o.exports.useState([]),[_,T]=o.exports.useState([]),[b,j]=o.exports.useState([]),p=async(e,i,P)=>{e=await k(i),P(e)};return o.exports.useEffect(()=>{const e=localStorage.getItem("favorites"),i=JSON.parse(e);i&&R(i)},[]),o.exports.useEffect(()=>{p(w,v.popularMovies(),C),p(F,v.upcomingMovies(),y),p(x,v.popularSeries(),M),p(_,v.topRatedSeries(),T),p(b,v.topRatedMovies(),j);const e=JSON.stringify(S);localStorage.setItem("favorites",e)},[S]),a(D,{children:[t(A,{}),t(r,{children:w.map((e,i)=>a(l,{children:[t(E,{src:n.images(e.backdrop_path),alt:`poster of ${e.original_title} movie`}),t(N,{title:e.original_title,text:e.overview.substring(0,220)})]},i))}),t(g,{title:"New Releases"}),t(r,{breakpoints:u,children:w.map((e,i)=>a(l,{children:[t(h,{image:n.w500images(e.poster_path),title:e.original_title,rating:e.vote_average,info:e.overview.substring(0,180).concat("..."),item:e}),a(m,{children:[t(s,{title:"Add to Favorites",onClick:()=>c(e)}),t(s,{title:"Remove from Favorites",onClick:()=>d(e)})]})]},i))}),t(g,{title:"Upcoming Movies"}),t(r,{breakpoints:u,children:F.map((e,i)=>a(l,{children:[t(h,{image:n.w500images(e.poster_path),title:e.original_title,rating:e.vote_average,info:e.overview.substring(0,180).concat("...")}),a(m,{children:[t(s,{title:"Add to Favorites",onClick:()=>c(e)}),t(s,{title:"Remove from Favorites",onClick:()=>d(e)})]})]},i))}),t(g,{title:"Featured TV Shows"}),t(r,{breakpoints:u,children:x.map((e,i)=>a(l,{children:[t(h,{image:n.w500images(e.poster_path),title:e.original_name,rating:e.vote_average,info:e.overview.substring(0,180).concat("...")}),a(m,{children:[t(s,{title:"Add to Favorites",onClick:()=>c(e)}),t(s,{title:"Remove from Favorites",onClick:()=>d(e)})]})]},i))}),t(g,{title:"Top Rated Movies"}),t(r,{breakpoints:u,children:b.map((e,i)=>a(l,{children:[t(h,{image:n.w500images(e.poster_path),title:e.original_title,rating:e.vote_average,info:e.overview.substring(0,180).concat("...")}),a(m,{children:[t(s,{title:"Add to Favorites",onClick:()=>c(e)}),t(s,{title:"Remove from Favorites",onClick:()=>d(e)})]})]},i))}),t(g,{title:"Top Rated TV Shows"}),t(r,{breakpoints:u,children:_.map((e,i)=>a(l,{children:[t(h,{image:n.w500images(e.poster_path),title:e.original_name,rating:e.vote_average,info:e.overview.substring(0,180).concat("...")}),a(m,{children:[t(s,{title:"Add to Favorites",onClick:()=>c(e)}),t(s,{title:"Remove from Favorites",onClick:()=>d(e)})]})]},i))}),t(H,{})]})};export{$ as default};
