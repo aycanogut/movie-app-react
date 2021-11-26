@@ -85,6 +85,11 @@ const StyledRating = styled.span`
   } ;
 `;
 
+const StyledImg = styled.img`
+  width: auto;
+  height: auto;
+`;
+
 const Card = ({ image, title, rating, info }) => {
   return (
     <StyledWrapper>
@@ -93,7 +98,7 @@ const Card = ({ image, title, rating, info }) => {
         <StyledCardInfo>{info}</StyledCardInfo>
         <StyledRating>{rating}</StyledRating>
       </StyledCardOverflow>
-      <img src={image} alt="Movie card" />
+      <StyledImg src={image} alt="Movie card" />
     </StyledWrapper>
   );
 };
