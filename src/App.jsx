@@ -7,7 +7,7 @@ import { GlobalStyles } from "./components/globalStyles";
 function App() {
   return (
     <div className="App">
-      {/* <Normalize /> */}
+      <Normalize />
       <ToastContainer theme="theme" />
       <GlobalStyles />
       <Routing />
