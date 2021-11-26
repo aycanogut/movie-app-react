@@ -87,22 +87,22 @@ const Navbar = ({ source }) => {
   return (
     <StyledNavbar>
       <Link to="/">
-        <StyledBadge src={NavLogo} alt="" />
+        <StyledBadge src={NavLogo} alt="Nav brand logo" />
       </Link>
       <StlyedUl>
         <StyledList>
           <Link to="/">
-            <Icon src={source} source={House} alt="" />
+            <Icon src={source} source={House} alt="Home icon" />
           </Link>
         </StyledList>
         <StyledList>
           <Link to="/search">
-            <Icon src={source} source={Search} alt="" />
+            <Icon src={source} source={Search} alt="Search icon" />
           </Link>
         </StyledList>
         <StyledList>
           <Link to="/favorites">
-            <Icon src={source} source={Star} alt="" />
+            <Icon src={source} source={Star} alt="Favorites icon" />
           </Link>
         </StyledList>
       </StlyedUl>

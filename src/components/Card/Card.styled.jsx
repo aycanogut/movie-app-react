@@ -93,7 +93,7 @@ const Card = ({ image, title, rating, info }) => {
         <StyledCardInfo>{info}</StyledCardInfo>
         <StyledRating>{rating}</StyledRating>
       </StyledCardOverflow>
-      <img src={image} />
+      <img src={image} alt="Movie card" />
     </StyledWrapper>
   );
 };

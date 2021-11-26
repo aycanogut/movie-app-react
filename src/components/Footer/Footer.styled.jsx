@@ -89,19 +89,19 @@ const Footer = ({ source }) => {
       <StlyedUl>
         <StyledList>
           <Link to="/" style={LinkStyles}>
-            <Icon src={source} source={House} alt="" />
+            <Icon src={source} source={House} alt="Home icon" />
             <StyledText style={{ marginLeft: 12 }}>Home</StyledText>
           </Link>
         </StyledList>
         <StyledList>
           <Link to="/search" style={LinkStyles}>
-            <Icon src={source} source={Search} alt="" />
+            <Icon src={source} source={Search} alt="Search icon" />
             <StyledText style={{ marginLeft: 12 }}>Search</StyledText>
           </Link>
         </StyledList>
         <StyledList>
           <Link to="/favorites" style={LinkStyles}>
-            <Icon src={source} source={Star} alt="" />
+            <Icon src={source} source={Star} alt="Favorites icon" />
             <StyledText style={{ marginLeft: 12 }}>Favorites</StyledText>
           </Link>
         </StyledList>
