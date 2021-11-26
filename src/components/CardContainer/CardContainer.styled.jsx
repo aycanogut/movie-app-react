@@ -54,7 +54,9 @@ const CardContainer = ({ cardContainer }) => {
     const localFavorites = localStorage.getItem("favorites");
     const parsedFavorites = JSON.parse(localFavorites);
 
-    parsedFavorites ? setFavorites(parsedFavorites) : setFavorites([]);
+    if (parsedFavorites) {
+      setFavorites(parsedFavorites);
+    }
   }, []);
 
   useEffect(() => {
