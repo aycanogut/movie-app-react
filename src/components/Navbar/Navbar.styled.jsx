@@ -127,6 +127,7 @@ const Navbar = ({ source, alternative }) => {
 
 Navbar.propTypes = {
   source: PropTypes.string,
+  alternative: PropTypes.string,
 };
 
 export default Navbar;
