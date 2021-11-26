@@ -83,41 +83,26 @@ const StlyedUl = styled.ul`
 
 const StyledList = styled.li``;
 
-const Navbar = ({ source, alternative }) => {
+const Navbar = ({ source }) => {
   return (
     <StyledNavbar>
       <Link to="/">
-        <StyledBadge src={NavLogo} alt="Nav brand logo" />
+        <StyledBadge src={NavLogo} alt="Home icon" />
       </Link>
       <StlyedUl>
         <StyledList>
           <Link to="/">
-            <Icon
-              src={source}
-              source={House}
-              alternative={"Home icon"}
-              alt={alternative}
-            />
+            <Icon src={source} source={House} alt="Search icon" />
           </Link>
         </StyledList>
         <StyledList>
           <Link to="/search">
-            <Icon
-              src={source}
-              source={Search}
-              alternative={"Search icon"}
-              alt={alternative}
-            />
+            <Icon src={source} source={Search} alt="Favorites icon" />
           </Link>
         </StyledList>
         <StyledList>
           <Link to="/favorites">
-            <Icon
-              src={source}
-              source={Star}
-              alternative={"Favorites icon"}
-              alt={alternative}
-            />
+            <Icon src={source} source={Star} alt="" />
           </Link>
         </StyledList>
       </StlyedUl>
@@ -127,7 +112,6 @@ const Navbar = ({ source, alternative }) => {
 
 Navbar.propTypes = {
   source: PropTypes.string,
-  alternative: PropTypes.string,
 };
 
 export default Navbar;

@@ -78,7 +78,7 @@ const StyledText = styled.p`
   }
 `;
 
-const Footer = ({ source, alternative }) => {
+const Footer = ({ source }) => {
   const LinkStyles = {
     display: "flex",
     alignItems: "center",
@@ -89,34 +89,19 @@ const Footer = ({ source, alternative }) => {
       <StlyedUl>
         <StyledList>
           <Link to="/" style={LinkStyles}>
-            <Icon
-              src={source}
-              source={House}
-              alternative={"Home icon"}
-              alt={alternative}
-            />
+            <Icon src={source} source={House} alt="Home icon" />
             <StyledText style={{ marginLeft: 12 }}>Home</StyledText>
           </Link>
         </StyledList>
         <StyledList>
           <Link to="/search" style={LinkStyles}>
-            <Icon
-              src={source}
-              source={Search}
-              alternative={"Search icon"}
-              alt={alternative}
-            />
+            <Icon src={source} source={Search} alt="Search icon" />
             <StyledText style={{ marginLeft: 12 }}>Search</StyledText>
           </Link>
         </StyledList>
         <StyledList>
           <Link to="/favorites" style={LinkStyles}>
-            <Icon
-              src={source}
-              source={Star}
-              alternative="Favorites icon"
-              alt={alternative}
-            />
+            <Icon src={source} source={Star} alt="Favorites icon" />
             <StyledText style={{ marginLeft: 12 }}>Favorites</StyledText>
           </Link>
         </StyledList>
@@ -127,7 +112,6 @@ const Footer = ({ source, alternative }) => {
 
 Footer.propTypes = {
   source: PropTypes.string,
-  alternative: PropTypes.string,
 };
 
 export default Footer;

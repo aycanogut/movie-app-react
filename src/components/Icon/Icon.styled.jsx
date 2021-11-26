@@ -18,13 +18,13 @@ const StyledIcon = styled.img`
   } ;
 `;
 
-function Icon({ source, alternative }) {
-  return <StyledIcon src={source} alternative={alternative} />;
+function Icon({ source, alt }) {
+  return <StyledIcon src={source} alt={alt} />;
 }
 
 Icon.propTypes = {
   source: PropTypes.string.isRequired,
-  alternative: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
 };
 
 export default Icon;
