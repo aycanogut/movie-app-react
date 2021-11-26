@@ -83,7 +83,7 @@ const StlyedUl = styled.ul`
 
 const StyledList = styled.li``;
 
-const Navbar = ({ source }) => {
+const Navbar = ({ source, alternative }) => {
   return (
     <StyledNavbar>
       <Link to="/">
@@ -92,17 +92,32 @@ const Navbar = ({ source }) => {
       <StlyedUl>
         <StyledList>
           <Link to="/">
-            <Icon src={source} source={House} alt="Home icon" />
+            <Icon
+              src={source}
+              source={House}
+              alternative={"Home icon"}
+              alt={alternative}
+            />
           </Link>
         </StyledList>
         <StyledList>
           <Link to="/search">
-            <Icon src={source} source={Search} alt="Search icon" />
+            <Icon
+              src={source}
+              source={Search}
+              alternative={"Search icon"}
+              alt={alternative}
+            />
           </Link>
         </StyledList>
         <StyledList>
           <Link to="/favorites">
-            <Icon src={source} source={Star} alt="Favorites icon" />
+            <Icon
+              src={source}
+              source={Star}
+              alternative={"Favorites icon"}
+              alt={alternative}
+            />
           </Link>
         </StyledList>
       </StlyedUl>
