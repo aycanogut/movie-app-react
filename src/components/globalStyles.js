@@ -5,6 +5,12 @@ import helpers from "./helpers";
 export const GlobalStyles = createGlobalStyle`
 
 // global styles
+
+* {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
 html {
     font-size: 62.5%;
 }
