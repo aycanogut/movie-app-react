@@ -1,9 +1,9 @@
 # React Movie Project
 
 Final project for Kodluyoruz Hatay 131. Front-End Development Bootcamp.
-IIt's a web-based, mobile-friendly movie application.
+It's a web-based, mobile-friendly movie application.
 Users can search for movies and television shows, add them to their watchlists, and see their watchlists.
-The Movie Database API (version 3) was used for API calls.
+[The Movie Database API (version 3)](https://developers.themoviedb.org/) was used for API calls.
 
 - [React Movie Project](#react-movie-project)
   - [Screenshots](#screenshots)
@@ -33,18 +33,10 @@ The Movie Database API (version 3) was used for API calls.
 ## Installation
 
 ```
-npm install
-```
-
-```
 yarn install
 ```
 
 ## Starting project
-
-```
-npm start dev
-```
 
 ```
 yarn dev
