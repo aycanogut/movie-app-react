@@ -88,6 +88,11 @@ const StyledRating = styled.span`
 const StyledImg = styled.img`
   width: auto;
   height: auto;
+
+  @media only screen and ${helpers.device.lg} {
+    min-width: 330px;
+    min-height: 495px;
+  } ;
 `;
 
 const Card = ({ image, title, rating, info }) => {
