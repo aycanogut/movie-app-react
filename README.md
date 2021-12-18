@@ -2,7 +2,7 @@
 
 Final project for Kodluyoruz Hatay 131. Front-End Development Bootcamp.
 It's a web-based, mobile-friendly movie application.
-Users can search for movies and television shows, add them to their watchlists, and see their watchlists.
+Users can search for movies and TV series and add or remove them from their favorites list.
 [The Movie Database API (version 3)](https://developers.themoviedb.org/) was used for API calls.
 
 - [React Movie Project](#react-movie-project)
